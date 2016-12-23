@@ -1,0 +1,30 @@
+<?php
+foreach(array('company','address','zipcode','contact','phone','fax','email') as $contact_key){
+	(!empty($cache_contact[$contact_key])) && $row_contact[$contact_key]=$_LANG['contact.'.$contact_key].': '.$cache_contact[$contact_key].'<br />';
+}
+$widget_contact=<<<EOT
+
+<div id="widget_contact">
+<div class="company">
+	{$row_contact['company']}
+	{$row_contact['address']}
+	{$row_contact['zipcode']}
+</div>
+<div class="contact">
+	{$row_contact['contact']}
+	{$row_contact['phone']}
+	{$row_contact['fax']}
+	{$row_contact['email']}
+</div>
+<div class="online">
+	<ul>{$webcore->getContacts()}</ul>
+</div>
+<div class="extra">
+	{$cache_contact['extradesc']}
+</div>
+
+</div>
+
+
+EOT;
+?>

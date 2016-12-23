@@ -1,0 +1,37 @@
+<!--<?php
+print <<<EOT
+-->
+<div class="main1"></div>
+<div class="main2">
+<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+	<div class="searchpagediv">
+		<div class="searchsite"><input type="text" id="sitekey" value="{$k}" /> <input id="sitebtn" type="button" value="{$_SLANG['search.site']}" onclick="searchproducts('sitekey')" /></div>
+		<div class="searchresult">{$recordnumstr}</div>
+<!--
+EOT;
+foreach($res as $rs){
+print <<<EOT
+-->
+		<div class="searchitem">
+			<b><span class="type">[{$rs['type']}]</span> <a href="{$rs['link']}" target="_blank" class="title">{$rs['title']}</a></b><br />
+			{$rs['content']}<br />
+			<a href="{$rs['link']}" target="_blank" class="link">{$rs['link']}</a> <span class="time">{$rs['posttime']}</span>
+		</div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+		<div class="clear"></div>
+		<div class="list_pager">{$pager->getPageStr()}</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="main3"></div>
+<script>
+$(document).ready(function(e){search_InitPage('sitekey');});
+</script>
+<!--
+EOT;
+?>
+-->

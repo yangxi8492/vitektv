@@ -1,0 +1,13 @@
+/*-------------------Pagination  Style-----------------*/
+.Pagination {height:30px;background:url('../images/pager.gif') 0px 0px;font-size:11px;}
+.Pagination a {padding:0px 2px;height:30px;line-height:30px;color:#574747;float:left;text-align:center;border-right:1px solid #D5CEC8;border-left:1px solid #FFFFFF;display:block;}
+.Pagination a:link,.Pagination a:visited,.Pagination a:active,.Pagination a:hover{color:#574747;text-decoration:none;}
+.Pagination strong {background:url('../images/pager.gif') 0px -30px;padding:0px 2px;height:30px;line-height:30px;color:#574747;float:left;text-align:center;border-left:1px solid #FFFFFF;border-right:1px solid #DEB647;display:block;}
+.Pagination_td1 {padding:0px 0px;height:30px;background:url('../images/pager.gif') 0px 0px;border:1px solid #CECFCA;border-right:0px;text-align:left;}
+.Pagination_td2 {padding:0px 8px;height:30px;background:url('../images/pager.gif') 0px 0px;border:1px solid #CECFCA;border-left:0px;text-align:left;font-size:12px;}
+.Pagination_inputtd {text-align:right;}
+.Pagination_input {background-color:#FFFFFF;background:url('../images/pager.gif') repeat-x 0px -80px;height:16px; padding:1px; border:1px solid #CFCFCD;font-size:12px;}
+.Pagination_epagetd {width:72px;}
+.Pagination_epagenum a {width:17px;height:15px;border:1px solid #858786;margin-right:5px;font-size:11px; display:block;float:left;background:url('../images/pager.gif') 0px -60px;}
+.Pagination_epagenum a:link,.Pagination_epagenum a:visited,.Pagination_epagenum a:active,.Pagination_epagenum a:hover{color:#574747;text-decoration:none;}
+.Pagination_epagenum strong {width:17px;height:15px;border:1px solid #858786;margin-right:5px;font-size:11px;display:block;float:left;background:url('../images/pager.gif') -20px -60px; color:#C37300;font-weight:normal;}

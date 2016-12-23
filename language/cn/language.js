@@ -1,0 +1,68 @@
+var _SLANG={
+all_ok: "  确定  ",
+all_warning: "提示",
+all_op_succeed: "操作成功",
+all_op_failed: "操作失败",
+all_fillall: "请填写完整必填项目.",
+all_modify_succeed: "修改成功",
+all_modify_failed: "修改失败",
+all_add_succeed: "添加成功",
+all_add_failed: "添加失败",
+all_del_succeed: "删除成功",
+all_del_failed: "删除失败",
+all_tips: "操作提示",
+
+msg_ok: "  确定  ",
+msg_warning: "提示",
+msg_fillall: "请填写完整必填项目.",
+msg_succeed: "留言成功",
+msg_failed: "留言失败",
+msg_leavesucceed: "您已经成功留言。您的留言将会在管理员回复之后显示在留言列表。",
+msg_leavefailed: "留言失败",
+
+cart_nowlogin: " 现在登录 ",
+cart_nownotlogin: " 不登录,继续提交 ",
+cart_logintips: "您还没有登录。为了方便您的订单的查询与跟进，建议您登录之后才提交订单。",
+cart_succeed_order: "您的订单提交成功。<br />订单编号",
+
+member_fillcoremail: "请输入正确的Email地址",
+member_coremail: "该Email填写正确",
+member_details_succeed: "恭喜您，会员资料修改成功。",
+member_details_failed: "会员资料修改失败，原因如下：",
+member_must_fill: "必须填写",
+member_length6_16: "长度必须为: 6-16个字符",
+member_repeat_pass: "请重复输入上面的密码",
+member_pass_succeed: "恭喜您，密码修改成功。<br />请在下次登录使用新密码。",
+member_pass_failed: "密码修改失败，原因如下：",
+member_addfav_succeed: "该产品已经成功添加到“我的收藏”！",
+member_addcart_succeed: "成功添加到购物车，请选择操作。",
+member_settle: "立即结算",
+member_goshop: "继续购物",
+
+sc_pass_level1: "弱",
+sc_pass_level2: "中",
+sc_pass_level3: "强",
+sc_pass_strength: "密码强度",
+
+signup_length4_16: "长度必须为：4-16位字符(中文8个)",
+signup_checking: "正在检测...",
+signup_usernameok: "该用户名可以正常注册",
+signup_length6_16: "长度必须为：6-16位字符",
+signup_canreg: "可以正常注册",
+signup_repass: "请重复输入上面的密码",
+signup_emailformaterr: "邮箱格式不正确",
+signup_emailok: "该Email可以正常注册",
+signup_inputok: "填写正确",
+signup_useragreement_tips: "接受用户协议才能够继续注册",
+signup_useragreement: "用户协议",
+login_filluser_andpass:  "请填写用户名和密码",
+
+public_filluser: "请填写用户名。",
+public_emailformaterr: "电子邮箱格式不正确。",
+public_fillcode: "请填写验证码。",
+public_hadsubmit: "您的请求已经提交。系统将会发送一封邮件到您的注册邮箱，请注意查收。",
+
+
+
+	_END:''
+};

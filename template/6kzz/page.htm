@@ -1,0 +1,70 @@
+<!--<?php
+print <<<EOT
+-->
+<div class="main1"></div>
+<div class="main2">
+<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+
+<table class="main_table">
+	<tr>
+		<td class="lefttd">
+<!--
+EOT;
+if(!empty($secmenu)){
+print <<<EOT
+-->
+			<div class="leftcate">
+				<h2>{$par_channel['title']}</h2>
+				<ul>{$secmenu}</ul>
+			</div>
+			<div class="clear" style='height:20px'></div>
+<!--
+EOT;
+}
+//如果产品展示栏目被禁用，则隐藏左边产品栏目
+if($webcore->haspro){
+print <<<EOT
+-->
+			<div class="leftcate">
+				<h2>{$_LANG['all.procate']}</h2>
+				<ul>{$webcore->getProCates(0)}</ul>
+			</div>
+			<div class="clear" style='height:20px'></div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+			<div class="leftcate">
+				<h2>{$_SLANG['all.contactus']}</h2>
+				<ul class="ctico">{$webcore->getContacts()}</ul>
+			</div>
+			<div class="clear" style='height:20px'></div>
+<!--
+EOT;
+//如果有网站调查
+$votelist=$webcore->getVotes();
+if(!empty($votelist)){
+print <<<EOT
+-->
+			<div class="voteheader">{$_SLANG['page.survey']}</div>
+			{$votelist}
+
+<!--
+EOT;
+}
+print <<<EOT
+-->
+
+		</td>
+		<td><div class="pagecontent">{$pagecontent}</div></td>
+	</tr>
+</table>
+	
+
+</div>
+<div class="main3"></div>
+<!--
+EOT;
+?>
+-->

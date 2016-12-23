@@ -1,0 +1,89 @@
+<!--<?php
+print <<<EOT
+-->
+<div class="main1"></div>
+<div class="main2">
+<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']} » {$row['name']}</div>
+
+<table class="main_table">
+	<tr>
+		<td class="lefttd">
+			<div class="leftcate">
+			<h2>{$_LANG['all.procate']}</h2>
+			<ul>{$webcore->getProCates(1)}</ul>
+			</div>
+			<div class="clear" style='height:20px'></div>
+			<div class="leftcate">
+				<h2>{$_SLANG['all.contactus']}</h2>
+				<ul class="ctico">{$webcore->getContacts()}</ul>
+			</div>
+		</td>
+		<td>
+		<h1>{$row['name']}</h1>
+		<table class="product_table"><tr>
+			<td>
+				<ul id="smalldiv">
+					{$row['smallimages']}
+				</ul>
+			</td>
+			<td>
+					<div id="bigdiv"><div id="biginner" class="jqzoom"><img src="{$row['picpath']}" onload='if(this.width>250)this.width=250;' /></div></div>
+			</td>
+			<td>
+			<table class="product_dt">
+<!--
+EOT;
+if($cache_global['funshop']=='1'){
+print <<<EOT
+-->
+				<tr><td class="left priceleft">{$_SLANG['product.price']}:</td><td><span class="price">{$cache_settings['cur']}{$row['price1']} </span></td></tr>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+				<tr><td class="left">{$_SLANG['product.serialnum']}:</td><td>{$row['serialnum']}</td></tr>
+				<tr><td class="left">{$_SLANG['product.store']}:</td><td><span class="store">{$row['store']}</span></td></tr>
+				<tr><td class="left">{$_SLANG['product.sold']}:</td><td><span class="sold">{$row['sold']}</span></td></tr>
+				<tr><td class="left">{$_SLANG['product.level']}:</td><td><div class="level level{$row['level']}"></div></td></tr>
+			</table>
+<!--
+EOT;
+if($cache_global['funshop']=='1'){
+print <<<EOT
+-->
+
+				<div class="product_cart"><a href="javascript:ajax_addToCart({$row['id']})">{$_SLANG['all.addtocart']}</a><a href="javascript:ajax_addFav({$row['id']})">{$_SLANG['all.addtofav']}</a><div class="clear"></div></div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+
+			</td>
+
+		</tr></table>
+		
+		<div class="product_title1"><b>{$_LANG['product.hot']}</b></div>
+		<ul class="indexproul">{$webcore->getProducts(0,0,1,8,1,0)}</ul>
+		<div class="clear" style="height:10px;"></div>
+		<div class="product_title1"><b>{$_LANG['product.details']}</b></div>
+		<div class="product_content">
+		{$row['content']}
+		</div>
+		</td>
+	</tr>
+</table>
+	
+
+</div>
+<div class="main3"></div>
+<script type="text/javascript" src="getfiles.php?t=js&v={$_SYS['VERSION']}&f=ajax|popwin|member|jqzoom"></script>
+<script>
+$(document).ready(function(e) {try {initSmallImgEvent();}catch(e){}});
+$(document).ready(function(e){ $(".jqzoom").jqueryzoom({xzoom: 360,yzoom: 292});});
+</script>
+<!--
+EOT;
+?>
+-->

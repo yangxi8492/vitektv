@@ -1,0 +1,26 @@
+<?php 
+ $cache_global = array(
+	'copyrightfooter' => 'Powered by <a href="http://www.6kzz.com" target="_blank">6KZZ v1.4</a> &copy; 2011 6kzz.com',
+	'copyrightheader' => ' - Powered by 6KZZ',
+	'funmember' => '0',
+	'funshop' => '0',
+	'issignup' => '1',
+	'issignupverify' => '0',
+	'isthumb' => '1',
+	'mailsender' => 'Sender@6kzz.com',
+	'mailsendtype' => '1',
+	'salt' => '00e0f2f90f537809a64280b3f0451140',
+	'signupfilename' => 'signup.php',
+	'signupitime' => '0.01',
+	'signupsecuritycode' => '0',
+	'smtpauth' => '1',
+	'smtppassword' => '',
+	'smtpport' => '',
+	'smtpsender' => '',
+	'smtpserver' => '',
+	'smtpusername' => '',
+	'testreceiver' => 'Receiver@6kzz.com',
+	'thumbheight' => '160',
+	'thumbwidth' => '160',
+); 
+?>

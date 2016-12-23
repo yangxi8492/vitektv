@@ -1,0 +1,98 @@
+<!--<?php
+print <<<EOT
+-->
+<div class="main1"></div>
+<div class="main2">
+<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+
+<table class="main_table">
+	<tr>
+		<td class="lefttd">
+<!--
+EOT;
+if(!empty($secmenu)){
+print <<<EOT
+-->
+			<div class="leftcate">
+			<h2>{$par_channel['title']}</h2>
+			<ul>{$secmenu}</ul>
+			</div>
+			<div class="clear" style='height:20px'></div>
+<!--
+EOT;
+}
+//如果产品展示栏目被禁用，则隐藏左边产品栏目
+if($webcore->haspro){
+print <<<EOT
+-->
+			<div class="leftcate">
+				<h2>{$_LANG['all.procate']}</h2>
+				<ul>{$webcore->getProCates(0)}</ul>
+			</div>
+			<div class="clear" style='height:20px'></div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+			<div class="leftcate">
+				<h2>{$_SLANG['all.contactus']}</h2>
+				<ul class="ctico">{$webcore->getContacts()}</ul>
+			</div>
+		</td>
+		<td>
+
+<table class="msgsearch"><tr><td><input type="button" value=" {$_SLANG['msg.leavemsg']} " class="button_css" onclick="window.scrollTo(0,1000000)" /></td><td><form action="msg.php" method="GET"><input type="text" name="msgkey" value="{$msgkey}" class="text_css" onmouseover="this.select()" /> <input type="submit" value="{$_LANG['header.search']}" class="button_css" /></form></td></tr></table>
+<ul id="msgul">
+<!--
+EOT;
+foreach($msgs as $msg){
+$replystr=empty($msg['replier'])?"":"<p class='replyblock'><span class=\"replier\">{$msg['replier']}</span><span class=\"replytime\"> REPLY@ {$msg['replytime']}</span><span class=\"reply\">{$msg['reply']}<span></p>
+";
+print <<<EOT
+-->
+	<li class="msgli_{$msg['mod']}"><span class="title">{$msg['title']}</span><span class="name">{$msg['name']}</span><span class="posttime"> @ {$msg['posttime']}</span><span class="remark">{$msg['remark']}<span>{$replystr}
+	</li>
+
+<!--
+EOT;
+}
+print <<<EOT
+-->
+</ul>
+<div class="list_pager">{$pager->getPageStr()}</div>
+<div class="clear"></div>
+<div class="msg_title1"><b>{$_SLANG['msg.leavemsg']} ({$_SLANG['all.required']})</b></div>
+<form id="msgform">
+	<table class="msgtb">
+		<tr><td class="msgtd1"><span class="required">*</span>{$_SLANG['msg.title']}:</td><td class="msgtd2"><input type="text" maxlength="40" class="text_css" name="title" id="title" /></td></tr>
+		<tr><td class="msgtd1"><span class="required">*</span>{$_SLANG['msg.name']}:</td><td class="msgtd2"><input type="text" maxlength="30" class="text_css" name="name" id="name" /></td></tr>
+		<tr><td class="msgtd1"><span class="required">*</span>{$_SLANG['msg.email']}:</td><td class="msgtd2"><input type="text" maxlength="30" class="text_css" name="email" id="email" /></td></tr>
+		<tr><td class="msgtd1">{$_SLANG['msg.contact1']}:</td><td class="msgtd2"><input type="text" maxlength="30" class="text_css" name="contact1" id="contact1" /></td></tr>
+		<tr><td class="msgtd1"><span class="required">*</span>{$_SLANG['msg.remark']}:</td><td class="msgtd2"><textarea name="remark" id="remark"></textarea></td></tr>
+<!--
+EOT;
+if($cache_settings['msgsecuritycode']=='1'){
+print <<<EOT
+-->
+		<tr><td class="msgtd1"><span class="required">*</span>{$_SLANG['msg.securitycode']}:</td><td class="msgtd2"><input type="text" maxlength="4" class="text_css" name="securitycode" id="securitycode" style="width:80px;" /> <a href="javascript:reloadVerify('securitycodeimg')" title="{$_SLANG['msg.noclear']}"><img src="code.php?t={$_SYS['time']}" align="absmiddle" border="0" id="securitycodeimg" /></a></td></tr>
+<!--
+EOT;
+}
+print <<<EOT
+-->		
+		<tr><td class="msgtd1"></td><td class="msgtd2"><input type="button" value="  {$_SLANG['msg.submit']}  " id="sbtn" class="button_css" onclick="checkAllAction()" /> <span id="step1_tips"></span></td></tr>
+	</table>
+</form>
+		</td>
+	</tr>
+</table>
+	
+
+</div>
+<div class="main3"></div>
+<script type="text/javascript" src="getfiles.php?t=js&v={$_SYS['VERSION']}&f=ajax|popwin|msg"></script>
+<!--
+EOT;
+?>
+-->

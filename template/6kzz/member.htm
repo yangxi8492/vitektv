@@ -1,0 +1,25 @@
+<!--<?php
+print <<<EOT
+-->
+<script type="text/javascript" src="getfiles.php?t=js&v={$_SYS['VERSION']}&f=util|popwin|ajax|choosedate|signup_common|member"></script>
+<div class="main1"></div>
+<div class="main2">
+<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+<div class="member_out">
+	<table class="member_a0">
+	<tr><td class="member_a1"><b>{$_SLANG['member.title']}</b>{$guidemenu}</td><td valign="top" class="member_include">
+<!--
+EOT;
+?>
+<!--<?php
+require_once getTemplatePath("{$includepath}");
+print <<<EOT
+-->
+	</td></tr></table>
+</div>
+</div>
+<div class="main3"></div>
+<!--
+EOT;
+?>
+-->

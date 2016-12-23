@@ -1,0 +1,55 @@
+<!--<?php
+print <<<EOT
+-->
+<div class="main1"></div>
+<div class="main2">
+<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+<div class="signup_div">
+	<div class="div_out_inner_nobg">
+		<form action="{$formaction}" method="POST" name="regform" id="regform">
+		<table>
+			<tr><td class="signup_a1"></td><td class="signup_a2"><span class="login_title">{$_SLANG['signup.title']}</span></td></tr>
+			<tr><td class="signup_a1"><span class="required">*</span>{$_SLANG['signup.username']}:</td><td class="signup_a2"><input type="text" style="width:160px;" name="membername" id="membername" tabIndex="101" class="text_css" /> <span id="membername_tips">{$_SLANG['signup.username.tips']}</span></td></tr>
+			<tr><td class="signup_a1"><span class="required">*</span>{$_SLANG['signup.password']}:</td><td class="signup_a2"><input type="password" style="width:160px;" name="memberpass" id="memberpass" tabIndex="102" class="text_css" /> <span id="memberpass_tips">{$_SLANG['signup.password.tips']}</span></td></tr>
+			<tr><td class="signup_a1"></td>
+			<td class="signup_a2">
+				<div style="width:208px;height:10px;overflow:hidden;border:0px solid #e5e5e5;float:left;" id="strength_Str">
+					<div id="strength_L" style="width:69px;height:10px;float:left;background-color:#f5f5f5;">
+					</div>
+					<div id="strength_M" style="width:69px;height:10px;float:left;background-color:#f5f5f5;">
+					</div>
+					<div id="strength_H" style="width:69px;height:10px;float:left;background-color:#f5f5f5;">
+					</div>
+				</div>
+			</td>
+		  </tr>
+			<tr><td class="signup_a1"><span class="required">*</span>{$_SLANG['signup.password2']}:</td><td class="signup_a2"><input type="password" style="width:160px;" name="repass" id="repass" tabIndex="103" class="text_css" /> <span id="repass_tips">{$_SLANG['signup.password2.tips']}</span></td></tr>
+			<tr><td class="signup_a1"><span class="required">*</span>{$_SLANG['signup.email']}:</td><td class="signup_a2"><input type="text" style="width:160px;" name="email" id="email" tabIndex="104" class="text_css" /> <span id="email_tips">{$_SLANG['signup.email.tips']}</span> </td></tr>
+<!--
+EOT;
+if($cache_global['signupsecuritycode']=='1'){
+print <<<EOT
+ -->			
+			<tr><td class="signup_a1"><span class="required">*</span>{$_SLANG['signup.securitycode']}:</td><td class="signup_a2"><input type="text" style="width:50px;" name="securitycode" id="securitycode" tabIndex="106" class="text_css" /> <a href="javascript:reloadVerify('securitycodeimg')" title="{$_SLANG['signup.noclear']}"><img src="code.php?t={$_SYS['time']}" align="absmiddle" border="0" id="securitycodeimg" /></a> <a href="javascript:reloadVerify('securitycodeimg')" title="{$_SLANG['signup.noclear']}">{$_SLANG['signup.noclear']}</a> <span id="verify_tips"></span> </td></tr>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+			<tr style="display:none;"><td class="signup_a1"></td><td class="signup_a2"><input type="checkbox" name="agreereg" id="agreereg" tabIndex="107" class="checkbox_css" checked="true" /> {$_SLANG['signup.ihaveread']}<a href="javascript:viewmemberAgreement()" class="signup_memberagree">{$_SLANG['signup.agreement']}</a> <span id="agree_tips"></span> </td></tr>
+			<tr><td class="signup_a1"></td><td class="signup_a2"><input type="button" class="button_css" value="  {$_SLANG['signup.submit']}  " onclick="checkAllAction()" tabIndex="108" /></td></tr>
+		</table>
+		</form>
+	</div>
+</div>
+</div>
+<div class="main3"></div>
+
+<script type="text/javascript" src="getfiles.php?t=js&v={$_SYS['VERSION']}&f=util|signup_common|signup|ajax|popwin"></script>
+<script type="text/javascript">
+window.onload=signup_PageInit;
+</script>
+<!--
+EOT;
+?>
+-->

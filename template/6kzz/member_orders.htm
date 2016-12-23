@@ -1,0 +1,51 @@
+<!--<?php
+print <<<EOT
+-->
+<div class="member_title"><b>{$_SLANG['member.myorders']}</b></div>
+<!--
+EOT;
+if(empty($rows)){
+print <<<EOT
+-->
+<div class="orderno">{$_SLANG['member.noorders']}</div>
+<!--
+EOT;
+}
+foreach($rows as $row){
+print <<<EOT
+-->
+<div class="orderitem">
+	<div class="ordertitle">{$_SLANG['member.ordernum']}: <b class="ordernum">{$row['ordernum']}</b>{$_SLANG['member.ordertime']}: <span class="time">{$row['createtime']}</span><br />{$_SLANG['member.orderstate']}: {$row['orderstate']}. {$row['remark2']}</div>
+	<table class="ordertable"><tr>
+		<td class="td1">
+<!--
+EOT;
+foreach($row['orderdetails'] as $odt){
+print <<<EOT
+-->
+			<table class="orderpro"><tr><td class="op1"><a href="{$odt['prourl']}" target="_blank"><img src="{$odt['picpath']}" /></a></td><td class="op2"><a href="{$odt['prourl']}" target="_blank">{$odt['proname']}</a> </td><td class="op3">{$cache_settings['cur']}{$odt['price']}</td><td class="op4">{$odt['pronum']}</td></tr></table>
+
+<!--
+EOT;
+}
+print <<<EOT
+-->
+
+			<div class="coverborder"></div>
+		</td>
+		<td class="td2"><span class="total">{$cache_settings['cur']}{$row['total']}</span><br />({$_SLANG['member.andexp']}:{$cache_settings['cur']}{$row['expresscharges']})</td>
+		<td class="td3"><span style="color:{$row['orderstatecolor']};font-weight:bold;">{$row['orderstate']}</span></td>
+	</tr></table>
+</div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+<div class="pagediv">
+	<table class="pagetable"><tr><td class="left"></td><td class="right">{$pager->getPageStr()}</td></tr></table>
+</div>
+<!--
+EOT;
+?>
+-->

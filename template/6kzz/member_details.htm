@@ -1,0 +1,66 @@
+<!--<?php
+print <<<EOT
+-->
+<form id="detailsform" name="detailsform" onsubmit="return false;">
+	<div class="member_title"><b>{$_SLANG['member.details']}</b></div>
+	<table>
+	  <tr>
+	   <td class="member_b1">{$_SLANG['member.realname']}: </td>
+	  <td><input name="member[realname]" id="realname" type="text" value="{$member['realname']}" size="15" class="text_css" /></td><td>&nbsp;</td>
+	  </tr>
+	  <tr>
+	    <td class="member_b1">{$_SLANG['member.sex']}: </td>
+	    <td><input type="radio" value="1" name="member[sex]" checked="checked" class="radio_css" /> {$_SLANG['member.sex1']} <input type="radio" value="0" name="member[sex]" class="radio_css" /> {$_SLANG['member.sex0']} </td><td></td>
+	  </tr>
+	  <tr>
+	    <td class="member_b1">{$_SLANG['member.birth']}: </td>
+	    <td>
+	    <input name="member[birthday]" id="birthday" type="text" value="{$member['birthday']}" size="32" readonly="true" class="text_css" />
+	    </td>
+	    <td>&nbsp;</td>
+	  </tr>
+	  <tr>
+	    <td class="member_b1">{$_SLANG['member.qq']}: </td>
+	  <td><input name="member[qq]" id="qq" type="text" value="{$member['qq']}" size="32" class="text_css" /></td><td>&nbsp;</td>
+	  </tr>
+	  <tr>
+	    <td class="member_b1">{$_SLANG['member.msn']}: </td>
+	  <td><input name="member[msn]" id="msn" type="text" value="{$member['msn']}" size="32" class="text_css" /></td><td>&nbsp;</td>
+	  </tr>
+	  <tr>
+	    <td class="member_b1"><span class="required">*</span>{$_SLANG['member.email']}: </td>
+	  <td><input name="member[email]" id="email" type="text" onblur="checkEmail()" value="{$member['email']}" size="32" class="text_css" /> <span id="email_tips">{$_SLANG['member.email.tips']}</span></td><td></td>
+	  </tr>
+	  <tr>
+	    <td class="member_b1">{$_SLANG['member.phone']}: </td>
+	    <td><input name="member[phone]" id="memberphone" type="text" value="{$member['phone']}" size="32" class="text_css" /></td><td>&nbsp;</td>
+	  </tr>
+	  <tr>
+	    <td class="member_b1">{$_SLANG['member.address']}: </td>
+	    <td><input name="member[address]" id="address" type="text" value="{$member['address']}" size="60" class="text_css" /></td><td>&nbsp;</td>
+	  </tr>
+	  <tr>
+	    <td class="member_b1">{$_SLANG['member.zipcode']}: </td>
+	    <td><input name="member[zipcode]" id="zipcode" type="text" value="{$member['zipcode']}" size="32" class="text_css" /></td><td>&nbsp;</td>
+	  </tr>
+	  
+<!--
+EOT;
+print <<<EOT
+-->
+	  <tr>
+	    <td class="member_b1">&nbsp;</td>
+	    <td><input name="button" type="button" class="button_css"  value=" {$_SLANG['member.details.submit']} " onclick="checkDetailsAction()" /> <span id="details_tips"></span></td>
+	    <td>&nbsp;</td>
+	  </tr>
+
+  </table>
+</form>
+<script>
+var member_sex="{$member['sex']}";
+window.onload=details_PageInit;
+</script>
+<!--
+EOT;
+?>
+-->

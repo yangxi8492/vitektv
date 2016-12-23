@@ -1,0 +1,104 @@
+<!--<?php
+print <<<EOT
+-->
+<script>var memberid="{$lg['memberid']}";</script>
+<script type="text/javascript" src="getfiles.php?t=js&v={$_SYS['VERSION']}&f=util|popwin|ajax|member|cart"></script>
+<!--
+EOT;
+if($action=='view'){
+print <<<EOT
+-->
+<div class="main1"></div>
+<div class="main2">
+<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+<div class="cartdiv">
+<div class="cartdiv_title"><b>{$_SLANG['cart.mycart']}</b></div>
+<table class="cartpro">
+<thead><tr><td class="op1">{$_SLANG['cart.propic']}</td><td class="op2">{$_SLANG['cart.proname']}</td><td class="op3">{$_SLANG['cart.price']}</td><td class="op4">{$_SLANG['cart.pronum']}</td><td class="op5">{$_SLANG['cart.itemtotal']}</td><td class="op6">{$_SLANG['cart.del']}</td></tr></thead>
+<!--
+EOT;
+foreach($odts as $odt){
+$odtid=$odt['proid'];
+print <<<EOT
+-->
+<tr id="odtr_{$odtid}"><td class="op1"><input type="hidden" value="{$odtid}" name="proid" /><input type="hidden" value="{$odt['price']}" id="price_{$odtid}" /><a href="{$odt['prourl']}" target="_blank"><img src="{$odt['picpath']}" /></a></td><td class="op2"><a href="{$odt['prourl']}" target="_blank">{$odt['proname']}</a> </td><td class="op3"><span class="price">{$cache_settings['cur']}{$odt['displayprice']}</span></td><td class="op4"><div class="nums"><div class="nums1" onclick="changeProNum({$odtid},-1)"></div><div class="nums2"><input type="text" value="{$odt['pronum']}" name="pronum[{$odtid}]" id="pronum_{$odtid}" /></div><div class="nums3" onclick="changeProNum({$odtid},1)"></div></div></td><td class="op5"><span class="price">{$cache_settings['cur']}<span id="itemtotal_{$odtid}">--</span></span></td><td class="op6"><a href="javascript:ajax_delFromCart({$odtid})">{$_SLANG['cart.del']}</a></td></tr>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+<tr><td colspan="6" style="background:#f5f5f5; text-align:right; padding:8px;">{$_SLANG['cart.total.noexp']}: <span class="price">{$cache_settings['cur']}<span id="total">--</span></span></td></tr>
+</table>
+<!--
+EOT;
+if(empty($odts)){
+print <<<EOT
+-->
+<div class="cartbtn"><a href="productlist.php">{$_SLANG['cart.continue']}</a></div>
+<!--
+EOT;
+}else{
+print <<<EOT
+-->
+<div class="cartbtn"><a href="productlist.php">{$_SLANG['cart.continue']}</a><a href="cart.php?action=buy">{$_SLANG['cart.makeaorders']}</a></div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+<div class="clear"></div>
+</div>
+</div>
+<div class="main3"></div>
+<script>
+countTotal();
+initPronumChange();
+</script>
+<!--
+EOT;
+}elseif($action=='buy'){
+print <<<EOT
+-->
+<div class="main1"></div>
+<div class="main2">
+<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+<div class="cartdiv">
+	<div class="cartdiv_title"><b>{$_SLANG['cart.orderdetails']}</b> ({$_SLANG['all.required']})</div>
+	<form id="orderform">
+		<table class="ordertb">
+			<tr><td class="ordertd1"><span class="required">*</span>{$_SLANG['cart.realname']}:</td><td class="ordertd2"><input type="text" maxlength="30" class="text_css" name="name" id="name"  value="{$member['realname']}" /></td></tr>
+			<tr><td class="ordertd1"><span class="required">*</span>{$_SLANG['cart.phonenum']}:</td><td class="ordertd2"><input type="text" maxlength="30" class="text_css" name="phonenum" id="phonenum" value="{$member['phone']}" /></td></tr>
+			<tr><td class="ordertd1"><span class="required">*</span>{$_SLANG['cart.address']}:</td><td class="ordertd2"><input type="text" maxlength="30" class="text_css" name="address" id="address" value="{$member['address']}" /></td></tr>
+			<tr><td class="ordertd1">{$_SLANG['cart.zipcode']}:</td><td class="ordertd2"><input type="text" maxlength="30" class="text_css" name="zipcode" id="zipcode" value="{$member['zipcode']}" /></td></tr>
+			<tr><td class="ordertd1">{$_SLANG['cart.email']}:</td><td class="ordertd2"><input type="text" maxlength="30" class="text_css" name="email" id="email" value="{$member['email']}" /></td></tr>
+			<tr><td class="ordertd1">{$_SLANG['cart.remark']}:</td><td class="ordertd2"><textarea name="remark" id="remark"></textarea></td></tr>
+		</table>
+	</form>
+
+	<div class="cartdiv_title"><b>{$_SLANG['cart.prolist']}</b></div>
+	<table class="cartpro">
+	<thead><tr><td class="op1">{$_SLANG['cart.propic']}</td><td class="op2">{$_SLANG['cart.proname']}</td><td class="op3">{$_SLANG['cart.price']}</td><td class="op4">{$_SLANG['cart.pronum']}</td><td class="op5">{$_SLANG['cart.itemtotal']}</td></tr></thead>
+<!--
+EOT;
+foreach($odts as $odt){
+$odtid=$odt['proid'];
+print <<<EOT
+-->
+	<tr><td class="op1"><a href="{$odt['prourl']}" target="_blank"><img src="{$odt['picpath']}" /></a></td><td class="op2"><a href="{$odt['prourl']}" target="_blank">{$odt['proname']}</a> </td><td class="op3"><span class="price">{$cache_settings['cur']}{$odt['displayprice']}</span></td><td class="op4">{$odt['pronum']}</td><td class="op5"><span class="price" id="itemtotal_{$odtid}">{$cache_settings['cur']}{$odt['itemtotal']}</span></td></tr>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+	<tr><td colspan="5" style="background:#f5f5f5; text-align:right; padding:8px;">{$_SLANG['cart.total.noexp']}: <span class="price">{$cache_settings['cur']}<span id="total">{$ordertotal}</span></span></td></tr>
+	</table>
+	<div class="cartbtn"><a href="javascript:checkCart()">{$_SLANG['cart.submit']}</a></div>
+	<div class="clear"></div>
+</div>
+</div>
+<div class="main3"></div>
+<!--
+EOT;
+}
+?>
+-->

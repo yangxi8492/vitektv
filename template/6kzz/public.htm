@@ -1,0 +1,27 @@
+<!--<?php
+print <<<EOT
+-->
+<div class="main1"></div>
+<div class="main2">
+	<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+	<div class="login_div">
+		<form id="mailform" onsubmit="return false;">
+		<table>
+			<tr><td class="login_a1"></td><td class="login_a2"><span id="input_err"><span class='login_title'>{$actr[1]}</span></td></tr>
+			<tr><td class="login_a1">{$_SLANG['public.username']}</td><td class="login_a2"><input type="text" style="width:200px;" name="membername" id="membername" tabIndex="99" class="text_css" /> <span id="membername_tips">{$_SLANG['public.username.tips']}</span></td></tr>
+			<tr><td class="login_a1">{$_SLANG['public.email']}</td><td class="login_a2"><input type="text" style="width:200px;" name="email" id="email" tabIndex="100" class="text_css" /> <span id="email_tips">{$_SLANG['public.email.tips']}</span></td></tr>
+			<tr><td class="login_a1">{$_SLANG['public.securitycode']}</td><td class="login_a2"><input type="text" style="width:50px;" name="securitycode" id="securitycode" tabIndex="101" class="text_css" /> <a href="javascript:reloadVerify('securitycodeimg')" title="{$_SLANG['public.noclear']}"><img src="code.php?t={$_SYS['time']}" align="absmiddle" border="0" id="securitycodeimg" /></a> <a href="javascript:reloadVerify('securitycodeimg')" title="{$_SLANG['public.noclear']}">{$_SLANG['public.noclear']}</a> <span id="verify_tips"></span></td></tr>
+			<tr><td class="login_a1"></td><td class="login_a2"><input type="button" class="button_css" value="  {$_SLANG['public.submit']}  " onclick="email_checkAllAction()" /><input type="hidden" name="ref" value="{$ref}" /></td></tr>
+		</table>
+		</form>
+	</div>
+</div>
+<div class="main3"></div>
+<script type="text/javascript" src="getfiles.php?t=js&v={$_SYS['VERSION']}&f=util|signup_common|ajax|popwin|public"></script>
+<script type="text/javascript">
+var action="{$actr[2]}";
+</script>
+<!--
+EOT;
+?>
+-->

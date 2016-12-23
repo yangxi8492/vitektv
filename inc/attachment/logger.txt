@@ -1,0 +1,8 @@
+E:\PHP\WebRoot\6kzz\inc/../uploadfile/attachment/201104/1303223448_25_1511.jpg
+E:\PHP\WebRoot\6kzz\inc/../uploadfile/thumb/201104/201104/1303224299_56_5245.jpg
+E:\PHP\WebRoot\6kzz\inc/../uploadfile/thumb/201104/1303224392_96_6562.jpg
+系统不能操作这种图片类型.
+不能改变图片的尺寸,可能是你没有设置图片来源.
+不能创建图片,原因可能是没有设置图片来源.
+图片宽度必须大于零.
+图片宽度必须大于零.

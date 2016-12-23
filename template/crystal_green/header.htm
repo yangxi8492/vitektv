@@ -1,0 +1,47 @@
+<!--<?php
+print <<<EOT
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$headtitle}</title>
+{$headmeta}
+{$cache_settings['headcontent']}
+<link href="{$_SYS['TP']}/css.php?t=templatecss&s={$_SYS['styleid']}&v={$_SYS['VERSION']}&f=global|member" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="getfiles.php?t=js&v={$_SYS['VERSION']}&f=util|jquery|hoverIntent|banner|productlist|iepng|search"></script>
+</head>
+<body>
+<div id="language"><div id="language_inner"><div id="phone">{$cache_contacts[0]['phone']}</div><ul>{$langstr}</ul></div></div>
+<div id="header">
+<table>
+<tr>
+<td class="left"><a href="{$_SYS['indexurl']}"><img src="{$cache_settings['logopath']}" alt="{$cache_settings['webname']}" /></a></td>
+<td class="right">
+<!--
+EOT;
+if($cache_global['funmember']=='1'){
+	if(isLogin()){
+print <<<EOT
+-->
+<div class="memberlognav"><a href="member.php">{$_SLANG['header.welcome']}: {$lg['displayname']}</a>|<a href="logout.php">{$_SLANG['header.exit']}</a>|<a href="cart.php" class="topcart">{$_SLANG['header.cart']}</a></div>
+<!--
+EOT;
+	}else{
+print <<<EOT
+-->
+<div class="memberlognav"><a href="{$cache_global['signupfilename']}">{$_SLANG['header.signup']}</a>|<a href="login.php">{$_SLANG['header.login']}</a>|<a href="cart.php" class="topcart">{$_SLANG['header.cart']}</a></div>
+<!--
+EOT;
+	}
+}
+print <<<EOT
+-->
+</td>
+</tr>
+</table>
+</div>
+<div id="nav"><ul id="topnav"><div class="searchdiv"><input id="keyword" type="text" value="{$k}" onmouseover="this.select()" /></div>{$webcore->getChannel(1,1)}</ul></div>
+<!--
+EOT;
+?>

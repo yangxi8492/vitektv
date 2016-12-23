@@ -1,0 +1,196 @@
+*{word-break:break-all;word-wrap:break-word;}
+body,input{
+	font:12px Verdana, Tahoma, Arial;
+}
+.text_css{font:12px Verdana, Tahoma, Arial;padding:4px 2px;border:1px solid;border-color:#666 #ccc #ccc #666; color:#333;font-size:12px;}
+.button_css{font:12px Verdana, Tahoma, Arial;padding:2px 4px;margin:0px;}
+.radio_css{}
+.checkbox_css{}
+select{padding:2px;font:12px Verdana, Tahoma, Arial;}
+textarea{font:12px Verdana, Tahoma, Arial;}
+
+
+a img{border:0px;}
+a:link,a:active,a:visited{color:#000; text-decoration:none;}
+a:hover{color:#000; text-decoration:none;}
+#btnCancel,#btnClose{
+	height:28px;
+}
+
+/* -- Table Styles ------------------------------- */
+
+.progressWrapper {
+	width: 750px;
+	color: #333333;
+	overflow: hidden;
+}
+
+.progressTitle{
+	font-weight:bold;
+	background:#F5F5F5;
+	padding:4px 0px;
+}
+
+.progressContainer {
+	overflow: hidden;
+}
+/* Message */
+.message {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;
+}
+/* Error */
+.red {
+	border-bottom: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+
+/* Current */
+.green {
+	border-bottom: solid 1px #DDF0DD;
+	background-color: #EBFFEB;
+}
+
+/* Complete */
+.blue {
+	border-bottom: solid 1px #CEE2F2;
+}
+
+.progressName {
+	width: 400px;
+	height:22px;line-height:22px;
+	text-align: left;
+	overflow: hidden;
+	float:left;
+}
+.progressName a:active, 
+.progressName a:link, 
+.progressName a:visited{ 
+	color:#0074BD;
+	text-decoration:none;
+}
+.progressName a:hover{
+	color:#0074BD;
+	text-decoration:underline;
+}
+
+.progressSize {
+	width: 100px;
+	height:22px;line-height:22px;
+	text-align: right;
+	overflow: hidden;
+	float:left;
+}
+
+
+.progressBarStatus {
+	width: 150px;
+	height:22px;line-height:22px;
+	text-align: right;
+	float:left;
+}
+
+.progressX{
+	width: 40px;
+	height:22px;line-height:22px;
+	text-align: right;
+	float:left;
+}
+.progressX a{
+	display:block;
+	width:15px;
+	height:22px;
+	background:url('../images/close.gif') no-repeat center center;
+	float:right;
+	margin-right:5px;
+}
+
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {
+	width: 0%;
+	height: 2px;
+	background-color: #51A428;
+	margin-top: 2px;
+	overflow:hidden;
+	clear:both;
+}
+
+.progressBarComplete {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+.progressBarError {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+
+.progressCancel {
+	height:22px;
+	width: 5px;
+	float:left;
+}
+
+.swfupload {
+	vertical-align: top;
+}
+
+#span_file_num_limit{color:#FF6600;}
+#span_today_uploaded{color:#FF6600;}
+#span_size_limit{color:#FF6600;}
+
+
+/********folder list*******/
+.condiv{background:#f5f5f5 url('../images/folder.gif') no-repeat 5px 12px; padding:8px 0px; text-indent:22px;  border-top:1px solid #dedede; border-bottom:1px solid #dedede; margin-bottom:8px;}
+.condiv a:link,.condiv a:hover,.condiv a:visited,.condiv a:active{color:#FF6600; text-decoration:underline;}
+#renamefolderdiv,#createfolderdiv, #delfolderdiv,#movefilediv, #delfilediv{background:#DDE9FF; padding:5px; margin:5px 0px; text-align:center;}
+
+.list_pager{float:right;}
+.folderitem{display:block; float:left; width:130px; height:150px; margin:0px 5px; position:relative;}
+.folderitem .checkbox{position:absolute; left:13px; top:1px;}
+.folderitem_imgdiv{width:90px; height:90px; margin:auto; padding:5px; overflow:hidden; text-align:center; border:1px solid #dedede; cursor:pointer;}
+.folderitem_imgdiv img{width:90px; height:90px;}
+.folderitem_filename{width:130px; height:20px; line-height:20px;overflow:hidden; text-align:center;}
+.folderitem_edit{width:130px; height:20px; line-height:20px;overflow:hidden; text-align:center; font-size:10px;}
+.folderitem_edit .del{color:#FF3300; font-size:12px; font-weight:bold;}
+.folderitem_edit .del a:link,.folderitem_edit .del a:hover,.folderitem_edit .del a:visited,.folderitem_edit .del a:active{color:#FF3300;}
+
+
+/********file list*******/
+#viewfolder{width:150px;}
+#movefilediv select{width:200px;}
+
+.attitem{display:block; float:left; width:130px; height:150px; margin:0px 5px;  position:relative;}
+.attitem .checkbox{position:absolute; left:13px; top:1px;}
+
+.attiem_imgdiv{width:90px; height:90px; margin:auto; padding:5px; overflow:hidden; text-align:center; border:1px solid #dedede; cursor:pointer;}
+.attiem_filename{width:130px; height:20px; line-height:20px; overflow:hidden; text-align:center;}
+.attiem_edit{width:130px; height:20px; line-height:20px;overflow:hidden; text-align:center; font-size:10px;}
+.attiem_edit .del{color:#FF3300; font-size:12px; font-weight:bold;}
+.attiem_edit .del a:link,.attiem_edit .del a:hover,.attiem_edit .del a:visited,.attiem_edit .del a:active{color:#FF3300;}
+
+
+
+
+
+/********** Pagination 分页 *********/
+.Pagination {height:30px;background:url('../../../images/pager.gif') 0px 0px;font-size:11px;}
+.Pagination a {padding:0px 2px;height:30px;line-height:30px;color:#574747;float:left;text-align:center;border-right:1px solid #D5CEC8;border-left:1px solid #FFFFFF;display:block;}
+.Pagination a:link,.Pagination a:visited,.Pagination a:active,.Pagination a:hover{color:#574747;text-decoration:none;}
+.Pagination strong {background:url('../../../images/pager.gif') 0px -30px;padding:0px 2px;height:30px;line-height:30px;color:#574747;float:left;text-align:center;border-left:1px solid #FFFFFF;border-right:1px solid #DEB647;display:block;}
+.Pagination_td1 {padding:0px 0px;height:30px;background:url('../../../images/pager.gif') 0px 0px;border:1px solid #CECFCA;border-right:0px;text-align:left;}
+.Pagination_td2 {padding:0px 8px;height:30px;background:url('../../../images/pager.gif') 0px 0px;border:1px solid #CECFCA;border-left:0px;text-align:left;font-size:12px;}
+.Pagination_inputtd {text-align:right;}
+.Pagination_input {background-color:#FFFFFF;background:url('../../../images/pager.gif') repeat-x 0px -80px;height:16px;padding:1px;border:1px solid #CFCFCD;font-size:12px;}
+.Pagination_epagetd {width:72px;}
+.Pagination_epagenum a {width:17px;height:15px;border:1px solid #858786;margin-right:5px;font-size:11px;display:block;float:left;background:url('../../../images/pager.gif') 0px -60px;}
+.Pagination_epagenum a:link,.Pagination_epagenum a:visited,.Pagination_epagenum a:active,.Pagination_epagenum a:hover{color:#574747;text-decoration:none;}
+.Pagination_epagenum strong {width:17px;height:15px;border:1px solid #858786;margin-right:5px;font-size:11px;display:block;float:left;background:url('../../../images/pager.gif') -20px -60px;color:#C37300;font-weight:normal;}
+

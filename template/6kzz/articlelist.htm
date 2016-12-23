@@ -1,0 +1,71 @@
+<!--<?php
+print <<<EOT
+-->
+<div class="main1"></div>
+<div class="main2">
+<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+
+<table class="main_table">
+	<tr>
+		<td class="lefttd">
+<!--
+EOT;
+if(!empty($secmenu)){
+print <<<EOT
+-->
+			<div class="leftcate">
+			<h2>{$par_channel['title']}</h2>
+			<ul>{$secmenu}</ul>
+			</div>
+			<div class="clear" style='height:20px'></div>
+<!--
+EOT;
+}
+//如果产品展示栏目被禁用，则隐藏左边产品栏目
+if($webcore->haspro){
+print <<<EOT
+-->
+			<div class="leftcate">
+				<h2>{$_LANG['all.procate']}</h2>
+				<ul>{$webcore->getProCates(0)}</ul>
+			</div>
+			<div class="clear" style='height:20px'></div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+			<div class="leftcate">
+				<h2>{$_SLANG['all.contactus']}</h2>
+				<ul class="ctico">{$webcore->getContacts()}</ul>
+			</div>
+		</td>
+		<td>
+
+<ul class="newlistul">
+<!--
+EOT;
+foreach($articles as $article){
+print <<<EOT
+-->
+	<li><span class="title"><a href="{$article['link']}" target="_blank">{$article['title']}</a></span><span class="time">{$article['posttime']}</span></li>
+
+<!--
+EOT;
+}
+print <<<EOT
+-->
+</ul>
+<div class="list_pager">{$pager->getPageStr()}</div>
+
+		</td>
+	</tr>
+</table>
+	
+
+</div>
+<div class="main3"></div>
+<!--
+EOT;
+?>
+-->

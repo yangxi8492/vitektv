@@ -1,0 +1,44 @@
+<!--<?php
+print <<<EOT
+-->
+<div class="member_title"><b>{$_SLANG['member.myfavs']}</b></div>
+<form id="favsform">
+<!--
+EOT;
+if(empty($rows)){
+print <<<EOT
+-->
+<div class="orderno">{$_SLANG['member.nofavsitem']}</div>
+<!--
+EOT;
+}
+foreach($rows as $row){
+print <<<EOT
+-->
+	<div class="proitem"><input type="checkbox" class="checkbox" name="favids[]" value="{$row['favid']}" /><div class="proimg" name="proimg"><a href="{$row['link']}" target="_blank" title="{$row['name']}"><img src="{$row['picpath']}" border="0" /></a></div><div class="proname"><a href="{$row['link']}" target="_blank" title="{$row['name']}">{$row['name']}</a><br /><span class='price'>{$cache_settings['cur']}{$row['price1']}</span></div></div>
+
+<!--
+EOT;
+}
+print <<<EOT
+-->
+<div class="clear"></div>
+</form>
+<table class="pagerdowntable"><tr>
+<td style="width:150px;"><input type="checkbox" class="checkbox_css" onclick="selectAll('favsform',this.checked)" /> {$_SLANG['all.selectall']} &nbsp;<input type="button" class="button_css" value="{$_SLANG['all.delselected']}" onclick="ajax_delFav()" /> 
+</td>
+<td><div class="list_pager">{$pager->getPageStr()}</div></td>
+</tr></table>
+<script>
+$(document).ready(function(e) {
+	try {
+		initMouseEvent("proimg");
+	}catch(e) {
+		//alert(e.message);
+	}
+});
+</script>
+<!--
+EOT;
+?>
+-->
