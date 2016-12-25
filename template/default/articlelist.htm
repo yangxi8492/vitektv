@@ -1,0 +1,62 @@
+<!--<?php
+print <<<EOT
+-->
+<div id="solid">
+    <div class="newsimg">
+       	<img src="/images/news.png" />
+    </div>
+</div>
+
+<div class="main1"></div>
+<div class="main2">
+<div class="position">
+<div class="left">{$par_channel['title']}</div>
+<div class="right">
+<span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+</div>
+
+<!--
+EOT;
+if(!empty($secmenu)){
+print <<<EOT
+-->
+	<div class="leftcate">
+		<ul>{$secmenu}</ul>
+	</div>
+	<div class="clear" style='height:20px'></div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+
+<div  class="newlistul">
+<ul>
+<!--
+EOT;
+foreach($articles as $article){
+print <<<EOT
+-->
+	<li>
+	<img src="{$article['picpath']}">
+	<div class="newscontent">
+		<a href="{$article['link']}" class="newtitle">{$article['title']}</a>
+		<p class="fl mt20">{$article['metadesc']} <span class='detail'><a href='{$article['link']}'>【详细】</a></span></p>
+		<span class="time">{$article['posttime']}</span>
+	</div>
+	</li>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+</ul>
+</div>
+<div class="list_pager">{$pager->getPageStr()}</div>
+
+</div>
+<div class="main3"></div>
+<!--
+EOT;
+?>
+-->

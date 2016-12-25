@@ -61,7 +61,7 @@ KE.setting = {
 		'superscript', '|', 'selectall', '-',
 		'title', 'fontname', 'fontsize', '|', 'textcolor', 'bgcolor', 'bold',
 		'italic', 'underline', 'strikethrough', 'removeformat', '|', 'image', 'attachment',
-		'flash', 'media', 'advtable', 'hr', 'link', 'unlink', '|', 'about'
+		'flash', 'media', 'advtable', 'hr', 'link', 'unlink'
 	],
 	colorTable : [
 		['#E53333', '#E56600', '#FF9900', '#64451D', '#DFC5A4', '#FFE500'],

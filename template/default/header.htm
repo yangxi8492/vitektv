@@ -1,0 +1,32 @@
+<!--<?php
+print <<<EOT
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$headtitle}</title>
+{$headmeta}
+{$cache_settings['headcontent']}
+<link href="{$_SYS['TP']}/css.php?t=templatecss&s={$_SYS['styleid']}&v={$_SYS['VERSION']}&f=global|member" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="getfiles.php?t=js&v={$_SYS['VERSION']}&f=util|jquery|hoverIntent|banner|productlist|iepng|search"></script>
+<script src="/js/fordboy.js"></script>
+</head>
+<body>
+<div id="header">
+<table>
+<tr>
+<td class="left"><a href="{$_SYS['indexurl']}"><img src="{$cache_settings['logopath']}" alt="{$cache_settings['webname']}" /></a></td>
+<td class="right">
+<div class="lang">
+{$langstr}
+</div><div class="searchdiv">
+<input id="keyword" type="text" value="{$k}" onmouseover="this.select()" /><input type="button" class="sbtn" onclick="searchproducts('keyword');" />
+</div></td>
+</tr>
+</table>
+</div>
+<div id="nav"><div id="topnav"><ul>{$webcore->getChannel(1,1)}</ul></div></div>
+<!--
+EOT;
+?>

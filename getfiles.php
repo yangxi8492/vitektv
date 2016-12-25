@@ -64,7 +64,7 @@ if(function_exists('ob_gzhandler')){
 	}
 
 	function isCached ()
-	{
+	{return false;
 		$tmp = getRequestHeader("HTTP_PRAGMA");
 		if ( strcasecmp($tmp,"no-cache") == 0  )
 		{

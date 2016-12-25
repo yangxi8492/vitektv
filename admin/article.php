@@ -17,7 +17,7 @@ switch($action){
 	}
 
 	$options="";
-	$rows1=$db->row_select("channels","pid=0 and channeltype=2 and langid={$_SYS['alangid']}",0,"*","ordernum,id");
+	$rows1=$db->row_select("channels","channeltype=2 and langid={$_SYS['alangid']}",0,"*","ordernum,id");
 	for($i=0;$i<count($rows1);$i++){
 		$row1=$rows1[$i];
 		$options.="<option value=\"{$row1['id']}\">&nbsp;&gt;&gt;&nbsp;{$row1[title]}</option>";

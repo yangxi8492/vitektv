@@ -26,7 +26,11 @@ if(intval($channel['pid'])>0){
 		if($tmpchannel['ishidden']=='1'){
 			continue;
 		}
-		$secmenu.="<li class='big'><a href=\"".$webcore->genNavLink($tmpchannel)."\">{$tmpchannel['title']}</a></li>";
+		$class = 'big2';
+		if($channelid == $childcid){
+		    $class = 'big1';
+		}
+		$secmenu.="<li class='".$class."'><a href=\"".$webcore->genNavLink($tmpchannel)."\">{$tmpchannel['title']}</a></li>";
 	}
 }else{
 	$par_channel=$channel;
@@ -47,12 +51,11 @@ foreach($articles as $key=>$article){
 	$article['title']=htmlFilter($article['title']);
 	$article['picpath']=$webcore->getPicPath($article['picpath'],true,true);
 	$article['posttime']=getDateStr($article['posttime'],false,0);
+	$article['metadesc']=htmlFilter($article['metadesc']);
 	$articles[$key]=$article;
 }
 
-
-
-$_SYS['positionchannel']=" » <a href=".$webcore->genUrl("articlelist.php?cid={$channel['id']}").">{$channel['title']}</a>";
+$_SYS['positionchannel']=" > <a href=".$webcore->genUrl("articlelist.php?cid={$channel['id']}").">{$channel['title']}</a>";
 require_once('./header.php');
 require_once getTemplatePath('articlelist.htm');
 footer();

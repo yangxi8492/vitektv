@@ -145,7 +145,7 @@ class Pager{
 		}
 		
 
-		$pageStr .= "</div></td><td class=\"".$this->styleClass."_td2 ".$this->styleClass."_inputtd\"><input class='".$this->styleClass."_input' type=text value=".$this->cPage." id=".$this->objName."pageInput size=5 onkeypress='".$this->objName."_pageKeyPress(event,this)' /> ".str_replace("{0}",$this->recordNum,$this->LANG['total'])."</td>".
+		$pageStr .= "</div></td><td class=\"".$this->styleClass."_td2 ".$this->styleClass."_inputtd\"><input class='".$this->styleClass."_input' type=text value=".$this->cPage." id=".$this->objName."pageInput size=3 onkeypress='".$this->objName."_pageKeyPress(event,this)' /> ".str_replace("{0}",$this->recordNum,$this->LANG['total'])."</td>".
 				"</tr></table>";
 		
 		$pageStr .= "<script type=\"text/javascript\">function "

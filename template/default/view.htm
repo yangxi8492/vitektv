@@ -1,0 +1,63 @@
+<!--<?php
+print <<<EOT
+-->
+<div id="solid">
+    <div class="newsimg">
+       	<img src="/images/news.png" />
+    </div>
+</div>
+
+<div class="main1"></div>
+<div class="main2">
+<div class="position">
+<div class="left">{$par_channel['title']}</div>
+<div class="right">
+<span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+</div>
+
+<!--
+EOT;
+if(!empty($secmenu)){
+print <<<EOT
+-->
+	<div class="leftcate">
+		<ul>{$secmenu}</ul>
+	</div>
+	<div class="clear" style='height:20px'></div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+
+<table class="main_table">
+	<tr>
+<!--
+EOT;
+//如果产品展示栏目被禁用，则隐藏左边产品栏目
+if($webcore->haspro){
+print <<<EOT
+-->
+			
+<!--
+EOT;
+}
+print <<<EOT
+-->
+		
+		<td>
+<h1>{$row['title']}</h1>
+<div class="viewsource"><span class='time'>{$row['posttime']}</span> <a href="{$cache_settings['url']}" target="_blank">{$cache_settings['webname']}</a></div>
+<div class="viewcontent">{$row['content']}</div>
+		</td>
+	</tr>
+</table>
+	
+
+</div>
+<div class="main3"></div>
+
+<!--
+EOT;
+?>
+-->

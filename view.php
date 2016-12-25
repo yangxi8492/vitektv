@@ -37,7 +37,11 @@ if(intval($channel['pid'])>0){
 		if($tmpchannel['ishidden']=='1'){
 			continue;
 		}
-		$secmenu.="<li class='big'><a href=\"".$webcore->genNavLink($tmpchannel)."\">{$tmpchannel['title']}</a></li>";
+		$class = 'big2';
+		if($channelid == $childcid){
+		    $class = 'big1';
+		}
+		$secmenu.="<li class='".$class."'><a href=\"".$webcore->genNavLink($tmpchannel)."\">{$tmpchannel['title']}</a></li>";
 	}
 }else{
 	$par_channel=$channel;

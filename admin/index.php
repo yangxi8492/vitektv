@@ -44,7 +44,7 @@ print<<<EOT
 <body>
 <table width="100%" height="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
 <tr>
-	<td class="top_1" style="witdh:168px;"><a href="http://www.6kzz.com" target="_blank" title="{$_AL['index.visit']}"><img src="images/img_adminlogo.png" border="0" /></a></td>
+	<td class="top_1" style="witdh:168px;"><a href="" target="_blank" title="{$_AL['index.visit']}"><img src="images/img_adminlogo.png" border="0" /></a></td>
 	<td class="top_1">
 		<div class="div_clear" style="height:25px;"></div>
 		<table cellspacing="0" cellpadding="0" style="border-collapse:collapse;" width="100%"><tr><td></td><td><div id="bigtab_container"></div></td><td class="right" width="190px"><a href="admin.php?inc=lang&action=list">{$_AL['index.languageset']}</a> | <a href="../" target="_blank">{$_AL['index.homepage']}</a> | <a href="login.php?action=exit" target="_top">{$_AL['index.exit']}</a>&nbsp; &nbsp;</td></tr></table>

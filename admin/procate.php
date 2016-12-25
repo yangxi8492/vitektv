@@ -134,6 +134,10 @@ echo <<<EOT
 			<tr><td class="td_1"><select name="pid" id="pid"><option value="0">{$_AL['procate.aslevel1']}</option>{$options}</select></td><td class="td_2">{$_AL['procate.uplevel.remark']}</td></tr>
 			<tr><td class="td_0">{$_AL['procate.ishidden']}:</td><td class=""></td></tr>
 			<tr><td class="td_1"><input type="radio" value="1" name="ishidden" class="radio_css" /> {$_AL['all.y']} &nbsp; &nbsp;<input type="radio" value="0" name="ishidden" class="radio_css" /> {$_AL['all.n']}</td><td class="td_2">{$_AL['procate.ishidden.remark']}</td></tr>
+			
+			<tr><td class="td_0">森{$_AL['all.seotitle']}:</td><td class=""></td></tr>
+			<tr><td class="td_1"><input type="text" style="width:280px;" value="{$row['seotitle']}" name="seotitle" id="seotitle" class="text_css" /></td><td class="td_2">{$_AL['all.seotitle.remark']}</td></tr>
+			
 			<tr><td class="td_0">{$_AL['all.seotitle']}:</td><td class=""></td></tr>
 			<tr><td class="td_1"><input type="text" style="width:280px;" value="{$row['seotitle']}" name="seotitle" id="seotitle" class="text_css" /></td><td class="td_2">{$_AL['all.seotitle.remark']}</td></tr>
 			<tr><td class="td_0">{$_AL['all.metakey']}:</td><td class=""></td></tr>

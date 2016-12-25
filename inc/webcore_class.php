@@ -112,10 +112,13 @@ function getProducts($cateid, $type, $order, $n, $showpic=0, $showname=1, $showp
 function getChannel($position, $menu=0){
 	global $cache_channels,$cache_procates;
 	$cstr='';
+	$url = $_SERVER['PHP_SELF'];
+    $filename = end(explode('/',$url)); 
+
 	foreach($cache_channels as $channel){
 		if($position==1 && (intval($channel['ishidden'])>0 || intval($channel['pid'])>0 || !stristr($channel['positions'],'|1|')))continue;
 		if($position==2 && (intval($channel['ishidden'])>0 || !stristr($channel['positions'],'|2|')))continue;
-		if($menu){
+		/*if($menu){
 			//生成栏目菜单
 			$submenu="";
 			foreach($channel['childcid'] as $childcid){
@@ -143,8 +146,20 @@ function getChannel($position, $menu=0){
 				$submenu="<div class='sub'><ul>{$submenu}</ul></div>";
 			}
 
+		}*/
+		$url = end(explode('/',$this->genNavLink($channel))); 
+		$topmenu = "";
+		if($filename == "product.php"){
+		    $filename = "productlist.php";
 		}
-		$cstr.="<li class='topmenu'><a class='toplink' href='".$this->genNavLink($channel)."'".($channel['channeltype']=='4'&&$channel['target']=='1'?" target='_blank'":"").">{$channel['title']}</a>{$submenu}</li>";
+		if($filename == "view.php"){
+		    $filename = "articlelist.php";
+		}
+		if(strstr($url, $filename)){
+			$topmenu = 'topmenu';
+		}
+		
+		$cstr.="<li class='".$topmenu."'><a class='toplink' href='".$this->genNavLink($channel)."'".($channel['channeltype']=='4'&&$channel['target']=='1'?" target='_blank'":"").">{$channel['title']}</a>{$submenu}</li>";
 	}
 	return $cstr;
 }

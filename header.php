@@ -1,14 +1,16 @@
 <?php
-//免费版本必须保留版权信息声明。如果您有需要修改版权声明，请购买企业授权。详见：http://www.6kzz.com/zz/service.php
+
 $webmaintitle=(empty($cache_settings['seotitle'])?strip_tags($cache_settings['webname']):strip_tags($cache_settings['seotitle']));
 $headtitle=empty($headtitle)? $webmaintitle : "{$headtitle} - ".strip_tags($cache_settings['webname']);
 $headtitle.=$cache_global['copyrightheader'];
 
 //语言
-$langstr='';
-foreach($cache_langs as $lang){
-	$langstr.="<li><a href='index.php?langid={$lang['id']}' style='background-image:url(language/{$lang['directory']}/flag.gif)'>{$lang['name']}</a></li>";
+$langstr='<li>';
+foreach($cache_langs  as $key=>$lang){
+	if($key==2) $langstr.="|";
+	$langstr.="<a href='index.php?langid={$lang['id']}'>{$lang['name']}</a>";
 }
+$langstr.='</li>';
 //位置
 $_SYS['indexurl'] = $webcore->genUrl('index.php'); 
 $_SYS['positionindex'] = "<a href=\"{$_SYS['indexurl']}\">{$cache_settings['webname']}</a>";
@@ -26,7 +28,8 @@ foreach($cache_links_text as $link){
 $bannerad="";
 for($b=1;$b<6;$b++){
 	if(intval($cache_settings["banner".$b])>0){
-		$bannerad.="<li><a href=\"".$cache_settings['bannerlink'.$b]."\" target=\"_blank\"><img src=\"".$webcore->getPicPath($cache_settings['bannerpath'.$b])."\"></a></li>";
+		//$bannerad.="<li><a href=\"".$cache_settings['bannerlink'.$b]."\" target=\"_blank\"><img src=\"".$webcore->getPicPath($cache_settings['bannerpath'.$b])."\"></a></li>";
+		$bannerad.='<a href="'.$cache_settings['bannerlink'.$b].'" class="d1" style="background:url('.$webcore->getPicPath($cache_settings['bannerpath'.$b]).') center no-repeat;background-size: 100% 594px"></a>';
 	}
 }
 
@@ -36,9 +39,6 @@ $cache_settings['logopath']=$webcore->getPicPath($cache_settings['logopath']);
 $headmeta=""
 ."<meta name=\"keywords\" content=\"{$headkeywords}\" />\n"
 ."<meta name=\"description\" content=\"{$headdesc}\" />\n"
-."<meta name=\"generator\" content=\"6KZZ v1.4\" />\n"
-."<meta name=\"author\" content=\"www.6kzz.com\" />\n"
-."<meta name=\"copyright\" content=\"2011 6KZZ\" />\n"
 ."<meta name=\"MSSmartTagsPreventParsing\" content=\"True\" />\n"
 ."<meta http-equiv=\"MSThemeCompatible\" content=\"Yes\" />\n"
 ."<meta http-equiv=\"x-ua-compatible\" content=\"ie=7\" />\n"

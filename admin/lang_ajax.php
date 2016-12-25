@@ -61,8 +61,8 @@ switch($action){
 					$setting['cur']=$_AL['lang.sys.cur'];
 					$setting['banner1']='2';
 					$setting['banner2']='3';
-					$setting['bannerlink1']='http://www.6kzz.com';
-					$setting['bannerlink2']='http://www.6kzz.com';
+					$setting['bannerlink1']='';
+					$setting['bannerlink2']='';
 					$setting['securitycode']='1';
 					$setting['webname']=$_AL['lang.sys.webname'];
 					$setting['timeformat']='yyyy-mm-dd';

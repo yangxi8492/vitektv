@@ -1,7 +1,7 @@
 <?php 
  $cache_global = array(
 	'copyrightfooter' => 'Powered by <a href="http://www.6kzz.com" target="_blank">6KZZ v1.4</a> &copy; 2011 6kzz.com',
-	'copyrightheader' => ' - Powered by 6KZZ',
+	'copyrightheader' => '',
 	'funmember' => '0',
 	'funshop' => '0',
 	'issignup' => '1',
@@ -9,7 +9,7 @@
 	'isthumb' => '1',
 	'mailsender' => 'Sender@6kzz.com',
 	'mailsendtype' => '1',
-	'salt' => '00e0f2f90f537809a64280b3f0451140',
+	'salt' => 'f6719257f054cec51a7b3410622c30c0',
 	'signupfilename' => 'signup.php',
 	'signupitime' => '0.01',
 	'signupsecuritycode' => '0',

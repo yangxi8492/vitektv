@@ -1,0 +1,55 @@
+<!--<?php
+print <<<EOT
+-->
+<div class="banner" id="banner" >
+	{$bannerad}
+	<div class="d2" id="banner_id">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">banner()</script>
+
+<div class="main1"></div>
+<div class="main2 index_main">
+	<table class="main_table">
+	<tr class="titletr">
+		<td width="33%">{$_LANG['main.news']}</td><td width="37%">{$_LANG['main.intro']}</td><td width="30%">{$_LANG['main.products']}</td>
+	</tr>
+	<tr>
+	<td><ul class="indexnewsul">{$webcore->getArticles(0,0,0,5,0,0)}</ul></td>
+	<td>
+		<div class="indexintro">{index_intro}</div>
+	</td>
+	<td><ul class="indexproul">{$webcore->getProducts(0,0,0,6,1,0)}</ul></td>
+	</tr>
+	</table>
+<!--
+EOT;
+if(!empty($links_logo)){
+print<<<EOT
+-->
+		<div id="link_logo"><ul>{$links_logo}</ul><div class="clear"></div></div>
+<!--
+EOT;
+}
+if(!empty($links_text)){
+print<<<EOT
+-->
+		<div id="link_text"><ul>{$links_text}</ul><div class="clear"></div></div>
+<!--
+EOT;
+}
+print<<<EOT
+-->
+
+</div>
+<div class="main3"></div>
+<!--
+EOT;
+?>
+-->

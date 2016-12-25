@@ -1,0 +1,50 @@
+<!--<?php
+print <<<EOT
+-->
+<div class="banner" id="banner" style="height:342px;">
+	<a class="d1" style="background: transparent url(/images/about.png) no-repeat;background-size: 100% 342px; display: block;"></a>
+	<div class="d2" id="banner_id">
+		<ul>
+			<li></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">banner()</script>
+
+<div class="main1"></div>
+<div class="main2">
+<div class="position">
+<div class="left">{$par_channel['title']}</div>
+<div class="right">
+<span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+</div>
+
+<!--
+EOT;
+if(!empty($secmenu)){
+print <<<EOT
+-->
+	<div class="leftcate">
+		<ul>{$secmenu}</ul>
+	</div>
+	<div class="clear" style='height:20px'></div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+
+<table class="main_table">
+	<tr>
+		
+		<td><div class="pagecontent">{$pagecontent}</div></td>
+	</tr>
+</table>
+	
+
+</div>
+<div class="main3"></div>
+<!--
+EOT;
+?>
+-->

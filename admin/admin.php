@@ -11,7 +11,7 @@ $action=strFilter($_GET['action']);
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>www.6kzz.com</title>
+<title></title>
 <link href="css/pager.css" rel="stylesheet" type="text/css" />
 <link href="css/global.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../getfiles.php?t=js&v=<?php echo $_SYS['VERSION'];?>&f=tab|util|ajax|choosedate|color|jquery|admin"></script>
