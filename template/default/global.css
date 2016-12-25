@@ -117,7 +117,7 @@ ul#topnav .sub ul li a:hover {color:#148FC8; }
 
 /********文章列表********/
 .newlistul{}
-.newlistul li{font-size:14px; height:157px; line-height:32px; overflow:hidden; border-bottom:1px dotted #cccccc;}
+.newlistul li{font-size:14px; height:180px; line-height:32px; overflow:hidden; border-bottom:1px dotted #cccccc;}
 .newlistul li a:link,.newlistul li a:hover,.newlistul li a:visited,.newlistul li a:active{color:#000;}
 .newlistul li .title{float:left;}
 .newlistul li img{height:157px;width:275px;}
