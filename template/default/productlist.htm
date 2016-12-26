@@ -1,6 +1,47 @@
 <!--<?php
 print <<<EOT
 -->
+<script src="/js/jquery.SuperSlide.2.1.1.js"></script>
+<script src="/js/jquery.SuperSlide.2.1.1.source.js"></script>
+<style>
+/* banner */
+.banner{ width:1205px; margin:0 auto; position:relative;  height:586px; overflow:hidden;  }
+.banner .bd{ position:relative; z-index:0;  }
+.banner .bd ul{ width:100% !important; }
+.banner .bd li{ width:100% !important;  height:586px; }
+.banner .bd li .siteWidth{ width:1000px; position:relative;  margin:0 auto;  height:586px;  }
+.banner .bd li a{ height:586px; display:block;  }
+.banner .bd .txt{ position:absolute; width:415px; top:100px; left:22px;   font:normal 18px/30px "Microsoft YaHei";    }
+.banner .bd .btn{ display:block; zoom:1; margin-top:8px;  width:72px; padding-right:10px;  height:31px; line-height:31px; text-align:center; color:#fff; font-size:12px; background:url(images/banner-btn.png) 0 0 no-repeat;
+_background:url(images/banner-btn-ie6.png) 0 0 no-repeat;
+}
+.banner .hd{ width:100%;  position:absolute; z-index:1; bottom:0; left:0; height:30px; line-height:30px; text-align:center; }
+.banner .hd ul li{ cursor:pointer; display:inline-block; *display:inline; zoom:1; width:11px; height:11px; margin:4px; background:url(images/dot-black.png) 0 0; overflow:hidden; 
+	line-height:9999px; filter:alpha(opacity=40);opacity:0.4; 
+}
+.banner .hd ul .on{ filter:alpha(opacity=100);opacity:1;  }
+</style>
+
+<div class="banner"> 
+   <div class="bd"> 
+    <ul style="position: relative; width: 1205px; height: 586px;"> 
+     <li style="background: url(/uploadfile/attachment/201612/1482553132_54_1217.jpg) no-repeat scroll center 0px;background-size: 100% 594px position: absolute; left: 0px; top: 0px; display: none;"><a target="_blank" href="http://www.superslide2.com/"></a></li> 
+     <li style="background: url(&quot;images/banner2.jpg&quot;) no-repeat scroll center 0px; position: absolute;background-size: 100% 594px width: 1920px; left: 0px; top: 0px; display: none;"><a target="_blank" href="http://www.superslide2.com/"></a></li> 
+     <li style="background: url(&quot;images/banner3.jpg&quot;) no-repeat scroll center 0px; position: absolute;background-size: 100% 594px width: 1920px; left: 0px; top: 0px; display: list-item;"><a target="_blank" href="http://www.superslide2.com/"></a></li> 
+     <li style="background: url(&quot;images/banner4.jpg&quot;) no-repeat scroll center 0px; position: absolute;background-size: 100% 594px width: 1920px; left: 0px; top: 0px; display: none;"><a target="_blank" href="http://www.superslide2.com/"></a></li> 
+    </ul> 
+   </div> 
+   <div class="hd">
+    <ul>
+     <li class="">1</li>
+     <li class="">2</li>
+     <li class="on">3</li>
+     <li class="">4</li>
+    </ul>
+   </div>
+  </div>
+  <script type="text/javascript">jQuery(".banner").slide({ titCell:".hd ul", mainCell:".bd ul", effect:"fold",  autoPlay:true, autoPage:true, trigger:"click" });</script>
+
 <div class="main1"></div>
 <div class="main2">
 <div class="position"><div class="right"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div></div>

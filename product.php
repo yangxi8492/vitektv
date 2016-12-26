@@ -16,7 +16,9 @@ if(!empty($row)){
 	$row['smallimages']='';
 	$pics=$webcore->getPics($row['picids'],$row['picpaths'],-1,true,true);
 	foreach($pics as $pic){
-		$row['smallimages'].=intval($pic['picid'])>0?"<li id=\"liimg_{$pic['picpath']}\"><img src=\"{$pic['picpath']}\" /></li>":"";
+		//$row['smallimages'].=intval($pic['picid'])>0?"<li id=\"liimg_{$pic['picpath']}\"><img src=\"{$pic['picpath']}\" /></li>":"";
+		$row['images'].=intval($pic['picid'])>0?'<li><a href="javascript:;"><img src="'.$pic['picpath'].'" width="480" height="330" /></a></li>':"";
+		$row['smallimages'].=intval($pic['picid'])>0?'<li><img src="'.$pic['picpath'].'" width="75" height="50" /></li>':"";
 	}
 	$row['picpath']=$pics[0]['picpath'];
 	unset($pics);

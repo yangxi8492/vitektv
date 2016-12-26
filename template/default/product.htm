@@ -1,73 +1,105 @@
 <!--<?php
 print <<<EOT
 -->
+<style type="text/css">
+*{ margin:0; padding:0; list-style:none;}
+img{ border:0;}
+.ban{ height:450px; position:relative; overflow:hidden;margin:40px auto 0 auto;}
+.ban2{ width:500px; height:330px; position:relative; overflow:hidden;margin: 0 auto;}
+.ban2 ul{ position:absolute; left:0; top:0;}
+.ban2 ul li{ width:500px; height:450px;}
+.prev{ float:left; cursor:pointer;}
+.num{ height:52px;overflow:hidden; width:480px; position:relative;float:left;margin-top:20px;}
+.min_pic{ padding-top:10px; width:80%;margin:0 auto;}
+.num ul{ position:absolute; left:0; top:0;}
+.num ul li{ width:75px; height:50px; margin-right:5px; padding:1px;}
+.num ul li.on{ border:1px solid #ededed ; padding:0;}
+.prev_btn1{ width:16px; text-align:center; height:18px; margin-top:20px; margin-right:10px; cursor:pointer; float:left;}
+.next_btn1{  width:16px; text-align:center; height:18px; margin-top:20px;cursor:pointer;float:right;}
+.prev1{ position:absolute; top:160px; left:20px; width:28px; height:51px;z-index:9;cursor:pointer;}
+.next1{ position:absolute; top:160px; right:20px; width:28px; height:51px;z-index:9;cursor:pointer;}
+.mhc{ background:#000; width:100%;opacity:0.5;-moz-opacity:0.5;filter:alpha(Opacity=50); position:absolute; left:0; top:0; display:none;}
+.pop_up{ width:500px; height:500px; padding:10px; background:#fff; position:fixed; -position:absolute; left:50%; top:50%; margin-left:-255px; margin-top:-255px; display:none; z-index:99;}
+.pop_up_xx{ width:40px; height:40px; position:absolute; top:-40px; right:0; cursor:pointer;}
+.pop_up2{ width:500px; height:500px; position:relative; overflow:hidden;}
+.pop_up2{ width:500px; height:500px; position:relative; overflow:hidden; float:left;}
+.pop_up2 ul{ position:absolute; left:0; top:0;}
+.pop_up2 ul li{ width:500px; height:500px; float:left;}
+</style>
 <div class="main1"></div>
 <div class="main2">
-<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']} » {$row['name']}</div>
+<div class="position"><div class="right"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']} » {$row['name']}</div></div>
 
-<table class="main_table">
+<table class="pro_table">
 	<tr>
 		<td class="lefttd">
-			<div class="leftcate">
-			<h2>{$_LANG['all.procate']}</h2>
+			<div class="leftpro">
 			<ul>{$webcore->getProCates(1)}</ul>
 			</div>
 			<div class="clear" style='height:20px'></div>
-			<div class="leftcate">
-				<h2>{$_SLANG['all.contactus']}</h2>
-				<ul class="ctico">{$webcore->getContacts()}</ul>
-			</div>
 		</td>
 		<td>
-		<h1>{$row['name']}</h1>
-		<table class="product_table"><tr>
-			<td>
-				<ul id="smalldiv">
-					{$row['smallimages']}
-				</ul>
-			</td>
-			<td>
-					<div id="bigdiv"><div id="biginner" class="jqzoom"><img src="{$row['picpath']}" onload='if(this.width>250)this.width=250;' /></div></div>
-			</td>
-			<td>
-			<table class="product_dt">
-<!--
-EOT;
-if($cache_global['funshop']=='1'){
-print <<<EOT
--->
-				<tr><td class="left priceleft">{$_SLANG['product.price']}:</td><td><span class="price">{$cache_settings['cur']}{$row['price1']} </span></td></tr>
-<!--
-EOT;
-}
-print <<<EOT
--->
-				<tr><td class="left">{$_SLANG['product.serialnum']}:</td><td>{$row['serialnum']}</td></tr>
-				<tr><td class="left">{$_SLANG['product.store']}:</td><td><span class="store">{$row['store']}</span></td></tr>
-				<tr><td class="left">{$_SLANG['product.sold']}:</td><td><span class="sold">{$row['sold']}</span></td></tr>
-				<tr><td class="left">{$_SLANG['product.level']}:</td><td><div class="level level{$row['level']}"></div></td></tr>
-			</table>
-<!--
-EOT;
-if($cache_global['funshop']=='1'){
-print <<<EOT
--->
-
-				<div class="product_cart"><a href="javascript:ajax_addToCart({$row['id']})">{$_SLANG['all.addtocart']}</a><a href="javascript:ajax_addFav({$row['id']})">{$_SLANG['all.addtofav']}</a><div class="clear"></div></div>
-<!--
-EOT;
-}
-print <<<EOT
--->
-
-			</td>
-
-		</tr></table>
+		<div class="pro_box_top">
+       	<div class="pro_box_top_lt left">{$procate['title']}</div>
+    	</div>
 		
-		<div class="product_title1"><b>{$_LANG['product.hot']}</b></div>
-		<ul class="indexproul">{$webcore->getProducts(0,0,1,8,1,0)}</ul>
+	<div class="ban" id="demo1">
+	<div class="ban2" id="ban_pic1">
+		<ul>
+		{$row['images']}
+		</ul>
+	</div>
+	<div class="min_pic">
+		<div class="prev_btn1" id="prev_btn1"><img src="/images/lt_01.png" /></div>
+		<div class="num clearfix" id="ban_num1">
+			<ul>
+				{$row['smallimages']}
+			</ul>
+		</div>
+		<div class="next_btn1" id="next_btn1"><img src="/images/rt_01.png" /></div>
+	</div>
+</div>
+		
+<script src="/js/jquery.min.js"></script>
+<script src="/js/pic_tab.js"></script>
+<script>
+jq(function(){
+	jq('#demo1').banqh({
+		box:"#demo1",//总框架
+		pic:"#ban_pic1",//大图框架
+		pnum:"#ban_num1",//小图框架
+		prev_btn:"#prev_btn1",//小图左箭头
+		next_btn:"#next_btn1",//小图右箭头
+		pop_prev:"#prev2",//弹出框左箭头
+		pop_next:"#next2",//弹出框右箭头
+		prev:"#prev1",//大图左箭头
+		next:"#next1",//大图右箭头
+		pop_div:"#demo2",//弹出框框架
+		pop_pic:"#ban_pic2",//弹出框图片框架
+		pop_xx:".pop_up_xx",//关闭弹出框按钮
+		mhc:".mhc",//朦灰层
+		autoplay:true,//是否自动播放
+		interTime:5000,//图片自动切换间隔
+		delayTime:400,//切换一张图片时间
+		pop_delayTime:400,//弹出框切换一张图片时间
+		order:0,//当前显示的图片（从0开始）
+		picdire:true,//大图滚动方向（true为水平方向滚动）
+		mindire:true,//小图滚动方向（true为水平方向滚动）
+		min_picnum:5,//小图显示数量
+		pop_up:true//大图是否有弹出框
+	})
+})
+</script>
+
+		<div class="pro_box_top">
+       	<div class="pro_box_top_lt left">{$row['name']}</div>
+    	</div>
 		<div class="clear" style="height:10px;"></div>
-		<div class="product_title1"><b>{$_LANG['product.details']}</b></div>
+		
+		<div class="pro_box_top">
+       	<div class="pro_box_top_desc">{$_LANG['product.details']}</div>
+    	</div>
+    	
 		<div class="product_content">
 		{$row['content']}
 		</div>
@@ -78,11 +110,7 @@ print <<<EOT
 
 </div>
 <div class="main3"></div>
-<script type="text/javascript" src="getfiles.php?t=js&v={$_SYS['VERSION']}&f=ajax|popwin|member|jqzoom"></script>
-<script>
-$(document).ready(function(e) {try {initSmallImgEvent();}catch(e){}});
-$(document).ready(function(e){ $(".jqzoom").jqueryzoom({xzoom: 360,yzoom: 292});});
-</script>
+
 <!--
 EOT;
 ?>
