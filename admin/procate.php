@@ -135,7 +135,14 @@ echo <<<EOT
 			<tr><td class="td_0">{$_AL['procate.ishidden']}:</td><td class=""></td></tr>
 			<tr><td class="td_1"><input type="radio" value="1" name="ishidden" class="radio_css" /> {$_AL['all.y']} &nbsp; &nbsp;<input type="radio" value="0" name="ishidden" class="radio_css" /> {$_AL['all.n']}</td><td class="td_2">{$_AL['procate.ishidden.remark']}</td></tr>
 			
-			<tr><td class="td_0">森{$_AL['all.seotitle']}:</td><td class=""></td></tr>
+			<tr><td class="td_0">{$_AL['procate.images']}:</td><td class=""></td></tr>
+			<tr><td class="td_1">
+			<div id="img_container" style="height:70px;">
+			<img src="images/loading.gif" /></div>
+			</td>
+			<td class="td_2">{$_AL['all.seotitle']}</td></tr>
+			
+			<tr><td class="td_0">{$_AL['all.seotitle']}:</td><td class=""></td></tr>
 			<tr><td class="td_1"><input type="text" style="width:280px;" value="{$row['seotitle']}" name="seotitle" id="seotitle" class="text_css" /></td><td class="td_2">{$_AL['all.seotitle.remark']}</td></tr>
 			
 			<tr><td class="td_0">{$_AL['all.seotitle']}:</td><td class=""></td></tr>
@@ -170,7 +177,7 @@ echo <<<EOT
 	};		
 	pt.initTab();
 	pt.clickNowTab();
-	
+	var imgArr=[0,{$row['picid']}];
 
 	var ishidden="{$row['ishidden']}";
 	var pid="{$pid}";
@@ -196,11 +203,78 @@ echo <<<EOT
 			popwin.showDialog(0,"{$_AL['all.con.failed']}", data,btns,280,130);
 		}
 	}
+			    
+	function openUploadAttach(handle1,handle2){
+		window.handle1=handle1; window.handle2=handle2;
+		popwin.showURL("{$_AL['products.upfile']}",'../inc/attachment/index.php',800,500);
+	}
+
+	function insertAttachment(fileid, filename, isimg){
+		isimg=parseInt(isimg);
+		if(window.handle1=='propics'){
+			if(isimg==1&&isImg(filename)){
+				E("imginput_"+curImgIndex).value=fileid;
+				E("imgdiv_"+curImgIndex).innerHTML="<img src='attachment.php?id="+fileid+"' border=0 />";
+				popwin.close();
+			}else{
+				alert("{$_AL['all.choose.image']}");
+			}
+		}else if(window.handle1=='editor'){
+			if(isimg==1&&isImg(filename)){
+				KE.insertHtml('content','<img src="attachment.php?id='+fileid+'" />');
+			}else{
+				KE.insertHtml('content','[file='+fileid+']'+filename+'[/file]');
+			}
+			popwin.close();
+		}
+	}
+
+	function createImg(){
+		for(var i=1;i<2;i++){
+			var inp=document.createElement("input");
+			inp.id="imginput_"+i;
+			inp.name="picid";
+			inp.type='hidden';
+
+			var outobj=document.createElement("div");
+			outobj.className="uploaddiv";
+
+			var obj=document.createElement("div");
+			obj.id="imgdiv_"+i;
+			obj.title="{$_AL['all.click2selimage']}";
+			obj.className="uploadimgdiv";
+			obj.onclick=(function(n){
+				return function(){
+					curImgIndex=n;
+					openUploadAttach('propics');
+				}
+			})(i);
+			var dellink=document.createElement("a");
+			dellink.innerHTML='X';
+			dellink.title="{$_AL['all.clear.img']}";
+			dellink.href="javascript:cleanImg("+i+")";
+			outobj.appendChild(obj);
+			outobj.appendChild(dellink);
+			E("img_container").appendChild(inp);
+			E("img_container").appendChild(outobj);
+			if(imgArr[i]>0){
+				E("imginput_"+i).value=imgArr[i];
+				E("imgdiv_"+i).innerHTML="<img src='attachment.php?id="+imgArr[i]+"' border=0 />";
+			}
+		}
+	}
+
+	function cleanImg(n){
+		E("imginput_"+n).value="0";
+		E("imgdiv_"+n).innerHTML="";
+	}
 
 	function InitPage(){
+		E("img_container").innerHTML="";
+		createImg();
 	}
-	
-	window.onload = InitPage;
+	InitPage();
+	//window.onload = InitPage;
 	
 	</script>
 EOT;

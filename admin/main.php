@@ -489,6 +489,147 @@ EOT;
 	break;
 	/************************************** banner END ************************************************/
 
+/************************************** probanner BEGIN ************************************************/
+case "probanner":
+    $row=getSettings();
+    for($b=1;$b<6;$b++){
+        $k="probannerlink".$b;
+        $row[$k]=str_replace(array('"','\''),array('',''),$row[$k]);
+    }
+    $dwidth=array(0,80,400,150);
+
+    echo <<<EOT
+	<table class="settop"><tr><td class="settop_left"><img src="../language/{$cache_langs[$_SYS['alangid']]['directory']}/flag.gif" title="{$effect_lang}" /></td><td><div id="smalltab_container"></div></td></tr></table>
+	<div class="smalltab_line"></div>
+	<div class="div_clear" style="height:10px;"></div>
+	<div id="t1">
+		<form id="bannerform" onsubmit="return false;">
+		<div class="tips_1">{$_AL['main.banner.tips']}</div>
+		<table class="table_1" width="100%">
+			<tr style="font-weight:bold;color:#333333;"><td class="td_6"><div class="rowdiv_0" style="width:{$dwidth[1]}px;">&nbsp;{$_AL['main.probanner.pic']}</div><div class="rowdiv_0" style="width:{$dwidth[2]}px;">{$_AL['main.probanner.link']}</div></td></tr>
+		</table>
+		<table class="table_1">
+			<tr><td class="td_1">
+				<div id="img_container"></div>
+				</td><td class="td_2"></td></tr>
+			<tr><td class="td_3"><input class="button_css" type="button" value="  {$_AL['all.submit']}  " onclick="ajax_savebanner()" /></td><td class=""></td></tr>
+		</table>
+		</form>
+	</div>
+
+	<div class="div_clear" style="height:30px;"></div>
+	<script>
+	var smallNowTab;
+	var pt = new Tabs();
+	pt.classpre="smalltab_";
+	pt.container = "smalltab_container";
+	pt.createTab("t1","{$_AL['main.probanner.title']}","",true,"n");
+
+	pt.init = function(){
+		smallNowTab = pt.nowTab;
+	};
+	pt.onclick = function(){
+		smallNowTab = pt.nowTab;
+	};
+	pt.initTab();
+	pt.clickNowTab();
+
+	var curImgIndex=1;
+	var imgArr=[0,{$row['probanner1']},{$row['probanner2']},{$row['probanner3']},{$row['probanner4']},{$row['probanner5']}];
+	var imglinkArr=["{$_AL['main.banner.deflink']}","{$row['probannerlink1']}","{$row['probannerlink2']}","{$row['probannerlink3']}","{$row['probannerlink4']}","{$row['probannerlink5']}"];
+
+	function openUploadAttach(handle1,handle2){
+		window.handle1=handle1; window.handle2=handle2;
+		popwin.showURL("{$_AL['main.banner.upfile']}",'../inc/attachment/index.php',800,500);
+	}
+
+	function insertAttachment(fileid, filename, isimg){
+		isimg=parseInt(isimg);
+		if(isimg==1&&isImg(filename)){
+			E("imginput_"+curImgIndex).value=fileid;
+			E("imgdiv_"+curImgIndex).innerHTML="<img src='attachment.php?id="+fileid+"' border=0 />";
+			popwin.close();
+		}else{
+			alert("{$_AL['all.choose.image']}");
+		}
+	}
+
+	function createImg(){
+		for(var i=1;i<6;i++){
+			var inp=document.createElement("input");
+			inp.id="imginput_"+i;
+			inp.name="settings[probanner"+i+"]";
+			inp.type='hidden';
+
+			var inplink=document.createElement("input");
+			inplink.id="imglink_"+i;
+			inplink.name="settings[probannerlink"+i+"]";
+			inplink.type='text';
+			inplink.className='text_css inputlink';
+			inplink.value="{$_AL['main.banner.deflink']}";
+
+			var outobj=document.createElement("div");
+			outobj.className="uploaddiv clearboth";
+
+			var obj=document.createElement("div");
+			obj.id="imgdiv_"+i;
+			obj.title="{$_AL['all.click2selimage']}";
+			obj.className="uploadimgdiv";
+			obj.onclick=(function(n){
+				return function(){
+					curImgIndex=n;
+					openUploadAttach();
+				}
+			})(i);
+			var dellink=document.createElement("a");
+			dellink.innerHTML='X';
+			dellink.title="{$_AL['all.clear.img']}";
+			dellink.href="javascript:cleanImg("+i+")";
+			outobj.appendChild(obj);
+			outobj.appendChild(inplink);
+			outobj.appendChild(dellink);
+			E("img_container").appendChild(inp);
+			//E("img_container").appendChild(inplink);
+			E("img_container").appendChild(outobj);
+			if(imgArr[i]>0){
+				E("imginput_"+i).value=imgArr[i];
+				E("imglink_"+i).value=imglinkArr[i];
+				E("imgdiv_"+i).innerHTML="<img src='attachment.php?id="+imgArr[i]+"' border=0 />";
+			}
+		}
+	}
+
+	function cleanImg(n){
+		E("imginput_"+n).value="0";
+		E("imgdiv_"+n).innerHTML="";
+	}
+
+	function ajax_savebanner(){
+		popwin.loading();
+		ajaxPost("bannerform","main_ajax.php?action=saveprobanner",ajax_savebanner_callback);
+	}
+
+	function ajax_savebanner_callback(data){
+		var btns=[{value:" {$_AL['all.ok']} ",onclick:"popwin.close();",focus:true}];
+		popwin.loaded();
+		if(isSucceed(data)){
+			popwin.showDialog(1,"{$_AL['all.modify.succeed']}","{$_AL['main.banner.succeed']}",btns,280,130);
+		}else{
+			popwin.showDialog(0,"{$_AL['all.con.failed']}", data,btns,280,130);
+		}
+	}
+
+	function InitPage(){
+		createImg();
+	}
+
+	window.onload = InitPage;
+
+	</script>
+EOT;
+			break;
+	/************************************** probanner END ************************************************/
+
 
 
 	/************************************** email BEGIN ************************************************/

@@ -86,6 +86,8 @@ print<<<EOT
 		<ul id="setting_ul">
 			<li><a href="admin.php?inc=main&action=settings">{$_AL['index.site.set']}</a></li>
 			<li><a href="admin.php?inc=main&action=banner">{$_AL['index.banner.set']}</a></li>
+			<li><a href="admin.php?inc=main&action=probanner">{$_AL['index.probanner.set']}</a></li>
+			
 			<li><a href="admin.php?inc=main&action=contact">{$_AL['index.contact.set']}</a></li>
 			<li><a href="admin.php?inc=template&action=list">{$_AL['index.template.set']}</a></li>
 			<li><a href="admin.php?inc=lang&action=list">{$_AL['index.language.set']}</a></li>

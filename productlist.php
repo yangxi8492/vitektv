@@ -18,6 +18,15 @@ $condition.=empty($cid)?"":" and cid in (select id from {$db->pre}procates where
 
 $orderstr="ordernum,id desc";
 
+//Banner获取
+$bannerad="";
+for($b=1;$b<6;$b++){
+    if(intval($cache_settings["probanner".$b])>0){
+        //$probannerad.='<a href="'.$cache_settings['probannerlink'.$b].'" class="d1" style="background:url('.$webcore->getPicPath($cache_settings['probannerpath'.$b]).') center no-repeat;background-size: 100% 594px"></a>';
+        $probannerad.='<li style="background: url('.$webcore->getPicPath($cache_settings['probannerpath'.$b]).') no-repeat scroll center 0px;background-size: 100% 594px position: absolute; left: 0px; top: 0px; display: none;"><a target="_blank" href="'.$cache_settings['probannerlink'.$b].'"></a></li>';
+    }
+}
+
 $pager = new Pager();
 $pager->init(intval($cache_settings['perpagepro']),$curPage,$pagerlink);
 $products = $pager->queryRows($db,"products",$condition, "id,cid,type,hits,posttime,alias,name,price1,picids,picpaths",$orderstr);

@@ -48,7 +48,27 @@ switch($action){
 		}
 	break;	
 
-
+	case "saveprobanner":
+	    $settings = $_POST['settings'];
+	    $rows=$db->row_select("attachments","id in (".intval($settings['probanner1']).",".intval($settings['probanner2']).",".intval($settings['probanner3']).",".intval($settings['probanner4']).",".intval($settings['probanner5']).")",0,"id,filepath");
+	    $picpathmap=array();
+	    foreach($rows as $row){
+	        $picpathmap[$row['id']]=$row['filepath'];
+	    }
+	    unset($rows);
+	    for($n=1;$n<6;$n++){
+	        $settings['probannerpath'.$n]=$picpathmap[$settings['probanner'.$n]];
+	    }
+	    unset($picpathmap);
+	    try{
+	        saveSettings($settings);
+	        writeSettingsCache();
+	        succeedFlag();
+	    }catch(Exception $e){
+	        echo($e);
+	    }
+	break;
+	    
 	case "saveconfig":
 	case "savetime":
 	case "saveseoinfo":

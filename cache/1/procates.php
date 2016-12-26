@@ -11,6 +11,8 @@ $cache_procates = array(
 		'metakeywords' => '',
 		'metadesc' => '',
 		'langid' => '1',
+		'picid' => '37',
+		'picpath' => '201612/1482670547_47_9445.jpg',
 		'childcid' => array(
 		),
 	),
@@ -25,6 +27,8 @@ $cache_procates = array(
 		'metakeywords' => '',
 		'metadesc' => '',
 		'langid' => '1',
+		'picid' => '40',
+		'picpath' => '201612/1482760236_76_4756.jpg',
 		'childcid' => array(
 		),
 	),
@@ -39,6 +43,8 @@ $cache_procates = array(
 		'metakeywords' => '',
 		'metadesc' => '',
 		'langid' => '1',
+		'picid' => '41',
+		'picpath' => '201612/1482760253_14_7978.jpg',
 		'childcid' => array(
 		),
 	),

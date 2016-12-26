@@ -44,6 +44,11 @@ switch($action){
 			$procate['seotitle']=strFilter($_POST['seotitle']);
 			$procate['metadesc']=strFilter($_POST['metadesc']);
 			$procate['metakeywords']=strFilter($_POST['metakeywords']);
+			$procate["picid"]=intval($_POST['picid']);
+			
+			$row=$db->row_select_one("attachments","id=".$procate['picid']);
+			$procate['picpath']=$row['filepath'];
+			
 			if($doaction=="edit"){
 				$id=intval($_POST['id']);
 				$db->row_update("procates",$procate,"id={$id}");
