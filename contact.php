@@ -10,5 +10,5 @@ $cid=intval($contact['id']);
 $cache_contact=$cache_contacts[0];
 
 require_once getTemplatePath('widget_contact.htm');
-require_once('./page.php');
+require_once('./page2.php');
 ?>

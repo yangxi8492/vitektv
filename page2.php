@@ -39,6 +39,6 @@ if(intval($channel['pid'])>0){
 }
 $_SYS['positionchannel']=" » <a href=".$webcore->genUrl("page.php?cid={$pagerow['id']}").">{$pagerow['title']}</a>";
 require_once('./header.php');
-require_once getTemplatePath('page.htm');
+require_once getTemplatePath('contact.htm');
 footer();
 ?>

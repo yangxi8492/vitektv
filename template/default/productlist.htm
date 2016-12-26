@@ -3,28 +3,31 @@ print <<<EOT
 -->
 <div class="main1"></div>
 <div class="main2">
-<div class="position"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+<div class="position"><div class="right"><span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div></div>
 
-<table class="main_table">
+<table class="pro_table">
 	<tr>
 		<td class="lefttd">
-			<div class="leftcate">
-			<h2>{$_LANG['all.procate']}</h2>
-			<ul>{$webcore->getProCates(1)}</ul>
+			<div class="leftpro">
+			<ul>{$webcore->getProCates(1,$cid)}</ul>
 			</div>
 			<div class="clear" style='height:20px'></div>
-			<div class="leftcate">
-				<h2>{$_SLANG['all.contactus']}</h2>
-				<ul class="ctico">{$webcore->getContacts()}</ul>
-			</div>
 		</td>
 		<td>
+		<div class="pro_box_top">
+       	<div class="pro_box_top_lt left">{$_LANG['main.products']}</div>
+    	</div>
 <!--
 EOT;
 foreach($products as $product){
 print <<<EOT
 -->
-	<div class="proitem"><div class="proimg" name="proimg"><a href="{$product['link']}" target="_blank" title="{$product['name']}"><img src="{$product['picpath']}" border="0" /></a></div><div class="proname"><a href="{$product['link']}" target="_blank" title="{$product['name']}">{$product['name']}</a>
+  
+	<div class="proitem">
+	<div class="proimg" name="proimg">
+	<a href="{$product['link']}" target="_blank" title="{$product['name']}">
+	<img src="{$product['picpath']}" border="0" /></a></div><div class="proname">
+	<a href="{$product['link']}" target="_blank" title="{$product['name']}">{$product['name']}</a>
 <!--
 EOT;
 if($cache_global['funshop']=='1'){
@@ -43,7 +46,7 @@ EOT;
 print <<<EOT
 -->
 <div class="clear"></div>
-<div class="list_pager">{$pager->getPageStr()}</div>
+<div class="pro_pager">{$pager->getPageStr()}</div>
 
 		</td>
 	</tr>

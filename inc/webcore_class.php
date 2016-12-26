@@ -24,7 +24,7 @@ function WebCore()
 /* getProCates(子类别)
  * 子类别:0:不显示; 1:显示
  */
-function getProCates($haschild=0){
+function getProCates($haschild=0, $cid=''){ 
 	global $cache_procates;
 	$catestr='';
 	//$rows1=$this->db->row_select("procates","pid=0 and langid={$this->langid}",0,"*","ordernum,id");
@@ -32,7 +32,9 @@ function getProCates($haschild=0){
 	$rows1=$cache_procates;
 	foreach($rows1 as $row1){
 		if($row1['pid']!='0' || $row1['ishidden']=='1')continue;
-		$catestr.="<li class='big'><a href='".$this->genUrl("productlist.php?cid={$row1['id']}")."'>{$row1['title']}</a></li>";
+		$class = 'big1';
+		if($cid && $cid==$row1['id'])$class = 'big2';
+		$catestr.="<li class='".$class."'><a href='".$this->genUrl("productlist.php?cid={$row1['id']}")."'>{$row1['title']}</a></li>";
 		if($haschild){
 			foreach($row1['childcid'] as $childid){
 				$row2=$cache_procates[$childid];

@@ -1,0 +1,47 @@
+<!--<?php
+print <<<EOT
+-->
+
+<div class="b_contact" style="background: rgba(0, 0, 0, 0) url(/images/contact.png) no-repeat scroll center center;
+    height: 342px;
+    overflow: hidden;
+    width: 100%;"></div>
+
+
+<div class="main1"></div>
+<div class="main2">
+<div class="position">
+<div class="left">{$par_channel['title']}</div>
+<div class="right">
+<span>{$_LANG['all.location']}:</span> {$_SYS['positionindex']} {$_SYS['positionchannel']}</div>
+</div>
+
+<!--
+EOT;
+if(!empty($secmenu)){
+print <<<EOT
+-->
+	<div class="leftcate">
+		<ul>{$secmenu}</ul>
+	</div>
+	<div class="clear" style='height:20px'></div>
+<!--
+EOT;
+}
+print <<<EOT
+-->
+
+<table class="main_table">
+	<tr>
+		
+		<td><div class="pagecontent">{$pagecontent}</div></td>
+	</tr>
+</table>
+	
+
+</div>
+<div class="main3"></div>
+<!--
+EOT;
+?>
+-->
