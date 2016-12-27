@@ -49,14 +49,16 @@ function getProCates($haschild=0, $cid=''){
 function getHomeProCates($num=3){
 	global $cache_procates;
 	$catestr='';
+	$i = 0;
 	//$rows1=$this->db->row_select("procates","pid=0 and langid={$this->langid}",0,"*","ordernum,id");
 	if(empty($cache_procates))return '';
-	$rows1=$cache_procates;print_r($rows1);
+	$rows1=$cache_procates;
 	foreach($rows1 as $row1){
 		if($row1['pid']!='0' || $row1['ishidden']=='1')continue;
-		
+		$i++;
+		if($i > $num) continue;
 		$webcore=new WebCore();
-		$protmppic=$webcore->getPics($row1['picids'],$row1['picpaths'],0,true,true);
+		$protmppic=$webcore->getPics($row1['picid'],$row1['picpath'],0,true,true);
 		$picpath=$protmppic['picpath'];
 		
 		$catestr.='<li><a href="'.$this->genUrl("productlist.php?cid={$row1['id']}").'"><img src="'.$picpath.'"></a>

@@ -1,7 +1,9 @@
 <?php
 $_LANG=array(
 	'header.search'=>'搜索...',
-	'main.news'=>'公司动态',
+	'main.realize'=>'了解澜威',
+	'main.about' =>'关于澜威',
+	'main.news'=>'新闻中心',
 	'main.intro'=>'网站简介',
 	'main.products'=>'产品展示',
 	'all.location'=>'当前位置',
@@ -12,7 +14,7 @@ $_LANG=array(
 	'contact.company'=>'公司',
 	'contact.address'=>'地址',
 	'contact.zipcode'=>'邮编',
-	'contact.contact'=>'联系人',
+	'contact.contact'=>'联系我们',
 	'contact.phone'=>'电话',
 	'contact.fax'=>'传真',
 	'contact.email'=>'邮箱',

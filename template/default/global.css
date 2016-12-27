@@ -128,10 +128,23 @@ ul#topnav .sub ul li a:hover {color:#148FC8; }
 .indexproul .proimg img{ height:65px;}
 .indexproul li span{display:block; height:14px; width:90px; overflow:hidden;}
 
-.news_pro_list {height: auto;overflow: hidden;width: 1205px;}
-.news_pro_list ul li {float: left;height: auto;margin-left: 15px;margin-right: 15px;padding: 5px 10px;width: 350px;}
-.news_pro_list ul li img {display: block;height: 197px;width: 350px;}
+.news_pro_list {height: auto;overflow: hidden;width: 1206px;}
+.news_pro_list ul li {float: left;height: margin;margin: 10px 11px 10px 11px;width: 380px;}
+.news_pro_list ul li img {display: block;height: 230px;width: 380px;}
 .news_pro_list ul li span {color: #555;display: block;font-size: 14px;padding-top: 5px;text-align: center;}
+
+.abt_vtk {background: #ececec none repeat scroll 0 0;height: auto;min-width: 1200px;overflow: hidden;padding: 25px 0;width: 100%;}
+.abt_vtk_box {background: #fff none repeat scroll 0 0; height: auto;overflow: hidden;padding: 8px;width: 370px;}
+.abt_vtk_box img {display: block;height: 193px;width: 370px;}
+.new_pro h1 {color: #222;display: block;font-size: 34px;text-align: center;text-transform: uppercase;}
+.new_pro span {color: #ababab;display: block;font-size: 11px;line-height: 150%;text-align: center;}
+.news_pro_list {height: auto;overflow: hidden;width: 1200px;}
+.news_pro_list ul li {float: left;height: auto; margin-left: 15px;margin-right: 15px;padding: 5px 10px;width: 350px;}
+.news_pro_list ul li img {display: block;height: 197px;width: 350px;}
+.news_pro_list ul li b {background: rgba(0, 0, 0, 0) url("../images/cs_12.jpg") no-repeat scroll center top;color: #333;display: block; font-size: 20px;margin-top: 15px;padding-top: 10px; text-align: center;}
+.news_pro_list ul li span {color: #555;display: block;font-size: 14px;padding-top: 5px;text-align: center;}
+.abt_vtk_box {margin-left: 15px;background: #fff none repeat scroll 0 0; height: auto;overflow: hidden;  padding: 8px;width: 370px;float:left;}
+.public_box {margin:0 auto;height: auto;overflow: hidden; width: 1205px;}
 
 /********文章列表********/
 .newlistul{}
@@ -291,9 +304,9 @@ ul#topnav .sub ul li a:hover {color:#148FC8; }
 
 /********底部*************/
 .footer{text-align:center; font-size:11px; color:#666; padding:10px 0px; line-height:150%;background:#4d5255;}
-.foot a:visited,.footer a:link,.footer a:hover,.footer a:active{color:#fff;}
+.footleft a:visited,.footleft a:link,.footleft a:hover,.footleft a:active{color:#fff;}
 .foot {margin: 0 auto;width: 1205px;}
-#footernavdiv{width:100%;height:50px;margin:10px auto 0px auto; clear:both; text-align:center;background:#4d5255;}
+#footernavdiv{width:100%;height:50px;margin:0px auto 0px auto; clear:both; text-align:center;background:#4d5255;}
 #footernavdiv .footleft {float:left;height: 50px;line-height: 50px;padding-left: 100px;width: 600px;}
 #footernavdiv .footright {float:right;color:#fff;line-height:50px;padding-right:90px;}
 #footernav li{display:inline; padding:0px 10px; border-right:1px solid #dedede; border-left:1px solid #dedede; margin-left:-1px; }

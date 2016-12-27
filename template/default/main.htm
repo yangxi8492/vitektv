@@ -16,31 +16,35 @@ print <<<EOT
 
 <div class="main1"></div>
 <div class="main2 index_main">
-
-
 	<div class="news_pro_list">
-	<ul>
-			{$webcore->getHomeProCates()}
-    	
-				
-                    
-    </ul>
+		<ul>
+				{$webcore->getHomeProCates()}
+	    </ul>
+	</div>
+</div>
+	
+	<div class="abt_vtk top_25">
+  <div class="new_pro">
+	<h1>{$_LANG['main.realize']}</h1>
 </div>
 
-
-
-	<table class="main_table">
-	<tr class="titletr">
-		<td width="33%">{$_LANG['main.news']}</td><td width="37%">{$_LANG['main.intro']}</td><td width="30%">{$_LANG['main.products']}</td>
-	</tr>
-	<tr>
-	<td><ul class="indexnewsul">{$webcore->getArticles(0,0,0,5,0,0)}</ul></td>
-	<td>
-		<div class="indexintro">{index_intro}</div>
-	</td>
-	<td><ul class="indexproul">{$webcore->getProducts(0,0,0,6,1,0)}</ul></td>
-	</tr>
-	</table>
+<div class="public_box top_20">
+	<div class="abt_vtk_box left right_21">
+    	<a href="about.asp"><img src="/uploadfile/attachment/201104/2_1302518056_2160.gif">
+        <span><p>{$_LANG['main.about']}</p></span></a>
+    </div>
+    
+     <div class="abt_vtk_box right">
+    	<a href="contact.asp"><img src="/uploadfile/attachment/201104/2_1302518056_2160.gif">
+        <span><p>{$_LANG['main.news']}</p></span></a>
+    </div>
+    
+    <div class="abt_vtk_box right">
+    	<a href="contact.asp"><img src="/uploadfile/attachment/201104/2_1302518056_2160.gif">
+        <span><p>{$_LANG['contact.contact']}</p></span></a>
+    </div>
+</div>
+</div>
 <!--
 EOT;
 if(!empty($links_logo)){
@@ -61,7 +65,6 @@ print<<<EOT
 -->
 
 </div>
-<div class="main3"></div>
 <!--
 EOT;
 ?>

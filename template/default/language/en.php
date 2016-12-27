@@ -1,6 +1,8 @@
 <?php
 $_LANG=array(
 	'header.search'=>'Search...',
+	'main.realize'=>'realize Us',
+	'main.about' =>'About Us',
 	'main.news'=>'News',
 	'main.intro'=>'Company',
 	'main.products'=>'Products',
@@ -12,7 +14,7 @@ $_LANG=array(
 	'contact.company'=>'Company',
 	'contact.address'=>'Address',
 	'contact.zipcode'=>'Zip Code',
-	'contact.contact'=>'Contact',
+	'contact.contact'=>'Contact Us',
 	'contact.phone'=>'TEL',
 	'contact.fax'=>'Fax',
 	'contact.email'=>'Email',
