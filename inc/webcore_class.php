@@ -134,7 +134,7 @@ function getProducts($cateid, $type, $order, $n, $showpic=0, $showname=1, $showp
  * 菜单:0:不显示; 1:显示;
  */
 function getChannel($position, $menu=0){
-	global $cache_channels,$cache_procates;
+	global $cache_channels,$cache_procates,$_SYS;
 	$cstr='';
 	$url = $_SERVER['PHP_SELF'];
     $filename = end(explode('/',$url)); 
@@ -173,14 +173,29 @@ function getChannel($position, $menu=0){
 		}*/
 		$url = end(explode('/',$this->genNavLink($channel))); 
 		$topmenu = "";
+		if($filename == "articlelist.php"){
+			$filename = "";
+		}
+		
 		if($filename == "product.php"){
 		    $filename = "productlist.php";
 		}
 		if($filename == "view.php"){
 		    $filename = "articlelist.php";
 		}
-		if(strstr($url, $filename)){
+		if(strstr($url, $filename) && $filename){
 			$topmenu = 'topmenu';
+		}else{
+			$cid = $_GET['cid'];
+			$id = $_GET['id'];
+			if($cid && $cid == $channel['id']){
+				$topmenu = 'topmenu';
+			}elseif($id){
+				$row=$this->db->row_select_one("articles","id=".$id." and langid=".$_SYS['langid']);
+				if($row['channelid'] ==  $channel['id'] ){ 
+					$topmenu = 'topmenu';
+				}
+			}
 		}
 		
 		$cstr.="<li class='".$topmenu."'><a class='toplink' href='".$this->genNavLink($channel)."'".($channel['channeltype']=='4'&&$channel['target']=='1'?" target='_blank'":"").">{$channel['title']}</a>{$submenu}</li>";
