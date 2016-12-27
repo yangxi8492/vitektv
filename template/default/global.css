@@ -128,6 +128,11 @@ ul#topnav .sub ul li a:hover {color:#148FC8; }
 .indexproul .proimg img{ height:65px;}
 .indexproul li span{display:block; height:14px; width:90px; overflow:hidden;}
 
+.news_pro_list {height: auto;overflow: hidden;width: 1205px;}
+.news_pro_list ul li {float: left;height: auto;margin-left: 15px;margin-right: 15px;padding: 5px 10px;width: 350px;}
+.news_pro_list ul li img {display: block;height: 197px;width: 350px;}
+.news_pro_list ul li span {color: #555;display: block;font-size: 14px;padding-top: 5px;text-align: center;}
+
 /********文章列表********/
 .newlistul{}
 .newlistul li{font-size:14px; height:180px; line-height:32px; overflow:hidden; border-bottom:1px dotted #cccccc;}

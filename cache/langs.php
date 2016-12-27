@@ -2,7 +2,7 @@
  $cache_langs = array(
 	'1' => array(
 		'id' => '1',
-		'name' => '中文',
+		'name' => '简体中文',
 		'directory' => 'cn',
 		'ordernum' => '1',
 		'isdefault' => '1',
@@ -10,7 +10,7 @@
 	),
 	'2' => array(
 		'id' => '2',
-		'name' => 'EN',
+		'name' => 'English',
 		'directory' => 'en',
 		'ordernum' => '2',
 		'isdefault' => '0',

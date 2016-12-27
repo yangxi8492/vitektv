@@ -46,6 +46,26 @@ function getProCates($haschild=0, $cid=''){
 	return $catestr;
 }
 
+function getHomeProCates($num=3){
+	global $cache_procates;
+	$catestr='';
+	//$rows1=$this->db->row_select("procates","pid=0 and langid={$this->langid}",0,"*","ordernum,id");
+	if(empty($cache_procates))return '';
+	$rows1=$cache_procates;print_r($rows1);
+	foreach($rows1 as $row1){
+		if($row1['pid']!='0' || $row1['ishidden']=='1')continue;
+		
+		$webcore=new WebCore();
+		$protmppic=$webcore->getPics($row1['picids'],$row1['picpaths'],0,true,true);
+		$picpath=$protmppic['picpath'];
+		
+		$catestr.='<li><a href="'.$this->genUrl("productlist.php?cid={$row1['id']}").'"><img src="'.$picpath.'"></a>
+        <span><a href="'.$this->genUrl("productlist.php?cid={$row1['id']}").'">'.$row1['title'].'</a></span> 
+        </li>';
+		//"<li class='".$class."'><a href='".$this->genUrl("productlist.php?cid={$row1['id']}")."'>{$row1['title']}</a></li>";
+	}
+	return $catestr;
+}
 
 /* getArticles(栏目ID,文章属性, 排序, 数目,图文数目,图文字符数量,是否返回数组)
  * 文章属性:0:普通;1:头条;2:推荐;3:高亮;4:滚动;5:加粗;6:跳转
