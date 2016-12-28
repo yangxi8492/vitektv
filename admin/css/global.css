@@ -245,7 +245,7 @@ a:hover {
 .login_div{background:#FFF; width:660px; margin:150px auto 50px auto; padding:35px 15px;}
 .login0{width:660px; margin:auto; background:#FFF; }
 .login0_left{width:300px; vertical-align:top; }
-.login0_left .login0_logo{width:220px; height:60px; margin-top:20px; background:url('../images/bg_login.gif') no-repeat top left;}
+.login0_left .login0_logo{width:280px; height:120px; margin-top:20px; background:url('../images/bg_login.png') no-repeat top left;}
 .login0_left .login0_text{color:#666666; line-height:160%;}
 .login0_right{width:300px; border-left:1px dashed #dedede; vertical-align:top; }
 .login0_noallow{font-size:14px;font-weight:bold; padding:20px 0 30px 30px; line-height:150%;}

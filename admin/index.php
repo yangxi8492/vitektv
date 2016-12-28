@@ -44,7 +44,7 @@ print<<<EOT
 <body>
 <table width="100%" height="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
 <tr>
-	<td class="top_1" style="witdh:168px;"><a href="" target="_blank" title="{$_AL['index.visit']}"><img src="images/img_adminlogo.png" border="0" /></a></td>
+	<td class="top_1" style="witdh:168px;"><a href="" target="_blank" title="{$_AL['index.visit']}"><img src="images/img_adminlogo.png" border="0" height="60"/></a></td>
 	<td class="top_1">
 		<div class="div_clear" style="height:25px;"></div>
 		<table cellspacing="0" cellpadding="0" style="border-collapse:collapse;" width="100%"><tr><td></td><td><div id="bigtab_container"></div></td><td class="right" width="190px"><a href="admin.php?inc=lang&action=list">{$_AL['index.languageset']}</a> | <a href="../" target="_blank">{$_AL['index.homepage']}</a> | <a href="login.php?action=exit" target="_top">{$_AL['index.exit']}</a>&nbsp; &nbsp;</td></tr></table>
@@ -68,7 +68,7 @@ print<<<EOT
 			<li><a href="admin.php?inc=products&action=add">{$_AL['index.product.add']}</a></li>
 			<li><a href="admin.php?inc=products&action=list">{$_AL['index.product.list']}</a></li>
 		</ul>
-		<div class="headbg" id="order">{$_AL['index.order.man']}</div>
+		<!--<div class="headbg" id="order">{$_AL['index.order.man']}</div>
 		<ul id="order_ul" style="display:none;">
 			<li><a href="admin.php?inc=order&action=list&state=0">{$_AL['index.order.state0']}</a></li>
 			<li><a href="admin.php?inc=order&action=list&state=1">{$_AL['index.order.state1']}</a></li>
@@ -81,28 +81,26 @@ print<<<EOT
 			<li><a href="admin.php?inc=member&action=verify">{$_AL['index.signup.verify']}</a></li>
 			<li><a href="admin.php?inc=member&action=addmember">{$_AL['index.member.add']}</a></li>
 			<li><a href="admin.php?inc=member&action=manager">{$_AL['index.member.list']}</a></li>
-		</ul>
+		</ul>-->
 		<div class="headbg" id="setting">{$_AL['index.site.man']}</div>
 		<ul id="setting_ul">
 			<li><a href="admin.php?inc=main&action=settings">{$_AL['index.site.set']}</a></li>
 			<li><a href="admin.php?inc=main&action=banner">{$_AL['index.banner.set']}</a></li>
 			<li><a href="admin.php?inc=main&action=probanner">{$_AL['index.probanner.set']}</a></li>
 			
-			<li><a href="admin.php?inc=main&action=contact">{$_AL['index.contact.set']}</a></li>
-			<li><a href="admin.php?inc=template&action=list">{$_AL['index.template.set']}</a></li>
+			<!--<li><a href="admin.php?inc=template&action=list">{$_AL['index.template.set']}</a></li>-->
 			<li><a href="admin.php?inc=lang&action=list">{$_AL['index.language.set']}</a></li>
 			<li><a href="admin.php?inc=user&action=manager">{$_AL['index.admin.set']}</a></li>
 		</ul>
 		<div class="headbg" id="other">{$_AL['index.other.set']}</div>
 		<ul id="other_ul" style="display:none;">
 			<li><a href="admin.php?inc=main&action=cache">{$_AL['index.sitecache.set']}</a></li>
-			<li><a href="admin.php?inc=link&action=friendlink">{$_AL['index.frilink.list']}</a></li>
+			<!--<li><a href="admin.php?inc=link&action=friendlink">{$_AL['index.frilink.list']}</a></li>
 			<li><a href="admin.php?inc=msg&action=list">{$_AL['index.msg.list']}</a></li>
 			<li><a href="admin.php?inc=vote&action=list">{$_AL['index.vote.list']}</a></li>
-			<li><a href="admin.php?inc=main&action=email">{$_AL['index.email.set']}</a></li>
+			<li><a href="admin.php?inc=main&action=email">{$_AL['index.email.set']}</a></li>-->
 			<li><a href="admin.php?inc=main&action=attachment">{$_AL['index.attachment.set']}</a></li>
 			<li><a href="admin.php?inc=database&action=backupform">{$_AL['index.data.man']}</a></li>
-			<li><a href="admin.php?inc=main&action=fun">{$_AL['index.site.fun']}</a></li>
 		</ul>
 	</td>
 	<td valign="top" height="100%">
@@ -114,7 +112,7 @@ print<<<EOT
 
 
 <script>
-var leftHead=['channel','product','order','member','setting','other'];
+var leftHead=['channel','product','setting','other'];//'order','member',
 var menuNowTab;
 var pt = new Tabs();
 pt.classpre="bigtab_";
